@@ -1,0 +1,2973 @@
+==================================================
+goal = test
+device = cuda
+device_id = 0
+dataset = Cifar10
+num_classes = 10
+model = CNN
+batch_size = 10
+local_learning_rate = 0.005
+learning_rate_decay = False
+learning_rate_decay_gamma = 0.99
+global_rounds = 1000
+local_epochs = 1
+algorithm = FedAH
+join_ratio = 1.0
+random_join_ratio = False
+num_clients = 20
+prev = 0
+times = 1
+eval_gap = 1
+save_folder_name = items
+auto_break = True
+dlg_eval = False
+dlg_gap = 100
+batch_num_per_client = 2
+num_new_clients = 0
+fine_tuning_epoch_new = 0
+feature_dim = 512
+vocab_size = 32000
+max_len = 200
+client_drop_rate = 0.0
+train_slow_rate = 0.0
+send_slow_rate = 0.0
+time_select = False
+time_threthold = 10000
+beta = 0.0
+lamda = 1.0
+mu = 0.0
+K = 5
+p_learning_rate = 0.01
+M = 5
+itk = 4000
+alphaK = 1.0
+sigma = 1.0
+alpha = 1.0
+plocal_epochs = 1
+tau = 1.0
+fine_tuning_epochs = 10
+dr_learning_rate = 0.0
+L = 1.0
+noise_dim = 512
+generator_learning_rate = 0.005
+hidden_dim = 512
+server_epochs = 1000
+localize_feature_extractor = False
+server_learning_rate = 1.0
+eta = 1.0
+rand_percent = 80
+layer_idx = 2
+mentee_learning_rate = 0.005
+T_start = 0.95
+T_end = 0.98
+momentum = 0.1
+kl_weight = 0.0
+ewc_lambda = 10.0
+buffer_size = 10
+grid_search = False
+==================================================
+Running with ewc_lambda=10.0, buffer_size=10
+
+============= Running time: 0th =============
+Creating server and clients ...
+FedAvgCNN(
+  (conv1): Sequential(
+    (0): Conv2d(3, 32, kernel_size=(5, 5), stride=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (conv2): Sequential(
+    (0): Conv2d(32, 64, kernel_size=(5, 5), stride=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc1): Sequential(
+    (0): Linear(in_features=1600, out_features=512, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (fc): Linear(in_features=512, out_features=10, bias=True)
+)
+Commons Config: {'common': None, 'parameter_tuning': False, 'algo_executing': 'FedALA'}
+
+Join ratio / total clients: 1.0 / 20
+Finished creating server and clients.
+
+-------------Round number: 0-------------
+
+Evaluate personalized models
+Averaged Train Loss: 2.3039
+Averaged Test Accurancy: 0.0937
+Averaged Test AUC: 0.4940
+Std Test Accurancy: 0.1815
+Std Test AUC: 0.2182
+------------------------- time cost ------------------------- 10.670475959777832
+
+-------------Round number: 1-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.8685
+Averaged Test Accurancy: 0.7434
+Averaged Test AUC: 0.9541
+Std Test Accurancy: 0.2059
+Std Test AUC: 0.0431
+------------------------- time cost ------------------------- 10.203384399414062
+
+-------------Round number: 2-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.6457
+Averaged Test Accurancy: 0.7860
+Averaged Test AUC: 0.9598
+Std Test Accurancy: 0.1899
+Std Test AUC: 0.0428
+------------------------- time cost ------------------------- 10.210724115371704
+
+-------------Round number: 3-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.5775
+Averaged Test Accurancy: 0.8038
+Averaged Test AUC: 0.9640
+Std Test Accurancy: 0.1911
+Std Test AUC: 0.0399
+------------------------- time cost ------------------------- 10.209973335266113
+
+-------------Round number: 4-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.5418
+Averaged Test Accurancy: 0.8169
+Averaged Test AUC: 0.9659
+Std Test Accurancy: 0.1649
+Std Test AUC: 0.0372
+------------------------- time cost ------------------------- 10.239188194274902
+
+-------------Round number: 5-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.5174
+Averaged Test Accurancy: 0.8218
+Averaged Test AUC: 0.9659
+Std Test Accurancy: 0.1586
+Std Test AUC: 0.0359
+------------------------- time cost ------------------------- 10.19466781616211
+
+-------------Round number: 6-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4979
+Averaged Test Accurancy: 0.8279
+Averaged Test AUC: 0.9651
+Std Test Accurancy: 0.1572
+Std Test AUC: 0.0354
+------------------------- time cost ------------------------- 10.21918249130249
+
+-------------Round number: 7-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4829
+Averaged Test Accurancy: 0.8310
+Averaged Test AUC: 0.9641
+Std Test Accurancy: 0.1534
+Std Test AUC: 0.0355
+------------------------- time cost ------------------------- 10.215339422225952
+
+-------------Round number: 8-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4702
+Averaged Test Accurancy: 0.8329
+Averaged Test AUC: 0.9630
+Std Test Accurancy: 0.1530
+Std Test AUC: 0.0360
+------------------------- time cost ------------------------- 10.263705492019653
+
+-------------Round number: 9-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4586
+Averaged Test Accurancy: 0.8393
+Averaged Test AUC: 0.9613
+Std Test Accurancy: 0.1468
+Std Test AUC: 0.0363
+------------------------- time cost ------------------------- 10.23401665687561
+
+-------------Round number: 10-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4499
+Averaged Test Accurancy: 0.8436
+Averaged Test AUC: 0.9596
+Std Test Accurancy: 0.1405
+Std Test AUC: 0.0371
+------------------------- time cost ------------------------- 10.230309247970581
+
+-------------Round number: 11-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4400
+Averaged Test Accurancy: 0.8467
+Averaged Test AUC: 0.9582
+Std Test Accurancy: 0.1385
+Std Test AUC: 0.0372
+------------------------- time cost ------------------------- 10.220514059066772
+
+-------------Round number: 12-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4303
+Averaged Test Accurancy: 0.8500
+Averaged Test AUC: 0.9567
+Std Test Accurancy: 0.1348
+Std Test AUC: 0.0374
+------------------------- time cost ------------------------- 10.231589794158936
+
+-------------Round number: 13-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4232
+Averaged Test Accurancy: 0.8498
+Averaged Test AUC: 0.9548
+Std Test Accurancy: 0.1355
+Std Test AUC: 0.0382
+------------------------- time cost ------------------------- 10.268013954162598
+
+-------------Round number: 14-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4170
+Averaged Test Accurancy: 0.8539
+Averaged Test AUC: 0.9529
+Std Test Accurancy: 0.1297
+Std Test AUC: 0.0388
+------------------------- time cost ------------------------- 10.179571390151978
+
+-------------Round number: 15-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4095
+Averaged Test Accurancy: 0.8556
+Averaged Test AUC: 0.9522
+Std Test Accurancy: 0.1298
+Std Test AUC: 0.0387
+------------------------- time cost ------------------------- 10.234266996383667
+
+-------------Round number: 16-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.4030
+Averaged Test Accurancy: 0.8582
+Averaged Test AUC: 0.9504
+Std Test Accurancy: 0.1287
+Std Test AUC: 0.0393
+------------------------- time cost ------------------------- 10.267716884613037
+
+-------------Round number: 17-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3969
+Averaged Test Accurancy: 0.8595
+Averaged Test AUC: 0.9495
+Std Test Accurancy: 0.1283
+Std Test AUC: 0.0393
+------------------------- time cost ------------------------- 10.40336298942566
+
+-------------Round number: 18-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3907
+Averaged Test Accurancy: 0.8624
+Averaged Test AUC: 0.9481
+Std Test Accurancy: 0.1254
+Std Test AUC: 0.0395
+------------------------- time cost ------------------------- 10.451512098312378
+
+-------------Round number: 19-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3892
+Averaged Test Accurancy: 0.8622
+Averaged Test AUC: 0.9467
+Std Test Accurancy: 0.1241
+Std Test AUC: 0.0396
+------------------------- time cost ------------------------- 10.673890352249146
+
+-------------Round number: 20-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3819
+Averaged Test Accurancy: 0.8656
+Averaged Test AUC: 0.9449
+Std Test Accurancy: 0.1225
+Std Test AUC: 0.0402
+------------------------- time cost ------------------------- 10.723922967910767
+
+-------------Round number: 21-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3775
+Averaged Test Accurancy: 0.8675
+Averaged Test AUC: 0.9446
+Std Test Accurancy: 0.1206
+Std Test AUC: 0.0400
+------------------------- time cost ------------------------- 10.808203220367432
+
+-------------Round number: 22-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3742
+Averaged Test Accurancy: 0.8678
+Averaged Test AUC: 0.9443
+Std Test Accurancy: 0.1202
+Std Test AUC: 0.0398
+------------------------- time cost ------------------------- 10.974295616149902
+
+-------------Round number: 23-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3726
+Averaged Test Accurancy: 0.8669
+Averaged Test AUC: 0.9437
+Std Test Accurancy: 0.1230
+Std Test AUC: 0.0402
+------------------------- time cost ------------------------- 10.803278923034668
+
+-------------Round number: 24-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3685
+Averaged Test Accurancy: 0.8674
+Averaged Test AUC: 0.9421
+Std Test Accurancy: 0.1215
+Std Test AUC: 0.0395
+------------------------- time cost ------------------------- 10.215301990509033
+
+-------------Round number: 25-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3655
+Averaged Test Accurancy: 0.8700
+Averaged Test AUC: 0.9413
+Std Test Accurancy: 0.1195
+Std Test AUC: 0.0401
+------------------------- time cost ------------------------- 10.916479349136353
+
+-------------Round number: 26-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3624
+Averaged Test Accurancy: 0.8700
+Averaged Test AUC: 0.9411
+Std Test Accurancy: 0.1188
+Std Test AUC: 0.0407
+------------------------- time cost ------------------------- 10.591073989868164
+
+-------------Round number: 27-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3595
+Averaged Test Accurancy: 0.8706
+Averaged Test AUC: 0.9402
+Std Test Accurancy: 0.1213
+Std Test AUC: 0.0395
+------------------------- time cost ------------------------- 10.336089611053467
+
+-------------Round number: 28-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3563
+Averaged Test Accurancy: 0.8718
+Averaged Test AUC: 0.9404
+Std Test Accurancy: 0.1195
+Std Test AUC: 0.0396
+------------------------- time cost ------------------------- 10.93091082572937
+
+-------------Round number: 29-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3543
+Averaged Test Accurancy: 0.8726
+Averaged Test AUC: 0.9394
+Std Test Accurancy: 0.1173
+Std Test AUC: 0.0401
+------------------------- time cost ------------------------- 10.261395692825317
+
+-------------Round number: 30-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3542
+Averaged Test Accurancy: 0.8730
+Averaged Test AUC: 0.9381
+Std Test Accurancy: 0.1185
+Std Test AUC: 0.0393
+------------------------- time cost ------------------------- 10.282537460327148
+
+-------------Round number: 31-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3509
+Averaged Test Accurancy: 0.8743
+Averaged Test AUC: 0.9390
+Std Test Accurancy: 0.1165
+Std Test AUC: 0.0393
+------------------------- time cost ------------------------- 10.545304536819458
+
+-------------Round number: 32-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3485
+Averaged Test Accurancy: 0.8734
+Averaged Test AUC: 0.9379
+Std Test Accurancy: 0.1177
+Std Test AUC: 0.0394
+------------------------- time cost ------------------------- 10.38108777999878
+
+-------------Round number: 33-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3456
+Averaged Test Accurancy: 0.8734
+Averaged Test AUC: 0.9385
+Std Test Accurancy: 0.1184
+Std Test AUC: 0.0394
+------------------------- time cost ------------------------- 10.228296518325806
+
+-------------Round number: 34-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3440
+Averaged Test Accurancy: 0.8756
+Averaged Test AUC: 0.9385
+Std Test Accurancy: 0.1191
+Std Test AUC: 0.0395
+------------------------- time cost ------------------------- 10.25256633758545
+
+-------------Round number: 35-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3420
+Averaged Test Accurancy: 0.8763
+Averaged Test AUC: 0.9387
+Std Test Accurancy: 0.1168
+Std Test AUC: 0.0391
+------------------------- time cost ------------------------- 10.215104818344116
+
+-------------Round number: 36-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3396
+Averaged Test Accurancy: 0.8770
+Averaged Test AUC: 0.9386
+Std Test Accurancy: 0.1150
+Std Test AUC: 0.0392
+------------------------- time cost ------------------------- 10.2638578414917
+
+-------------Round number: 37-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3390
+Averaged Test Accurancy: 0.8757
+Averaged Test AUC: 0.9383
+Std Test Accurancy: 0.1147
+Std Test AUC: 0.0393
+------------------------- time cost ------------------------- 10.250526189804077
+
+-------------Round number: 38-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3368
+Averaged Test Accurancy: 0.8768
+Averaged Test AUC: 0.9384
+Std Test Accurancy: 0.1150
+Std Test AUC: 0.0393
+------------------------- time cost ------------------------- 10.199578762054443
+
+-------------Round number: 39-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3344
+Averaged Test Accurancy: 0.8789
+Averaged Test AUC: 0.9389
+Std Test Accurancy: 0.1126
+Std Test AUC: 0.0386
+------------------------- time cost ------------------------- 10.24609375
+
+-------------Round number: 40-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3331
+Averaged Test Accurancy: 0.8790
+Averaged Test AUC: 0.9390
+Std Test Accurancy: 0.1126
+Std Test AUC: 0.0383
+------------------------- time cost ------------------------- 10.250008583068848
+
+-------------Round number: 41-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3322
+Averaged Test Accurancy: 0.8786
+Averaged Test AUC: 0.9387
+Std Test Accurancy: 0.1129
+Std Test AUC: 0.0392
+------------------------- time cost ------------------------- 10.204179048538208
+
+-------------Round number: 42-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3296
+Averaged Test Accurancy: 0.8798
+Averaged Test AUC: 0.9398
+Std Test Accurancy: 0.1110
+Std Test AUC: 0.0386
+------------------------- time cost ------------------------- 10.342325448989868
+
+-------------Round number: 43-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3288
+Averaged Test Accurancy: 0.8800
+Averaged Test AUC: 0.9389
+Std Test Accurancy: 0.1105
+Std Test AUC: 0.0384
+------------------------- time cost ------------------------- 10.225399255752563
+
+-------------Round number: 44-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3266
+Averaged Test Accurancy: 0.8800
+Averaged Test AUC: 0.9393
+Std Test Accurancy: 0.1123
+Std Test AUC: 0.0388
+------------------------- time cost ------------------------- 10.256911039352417
+
+-------------Round number: 45-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3243
+Averaged Test Accurancy: 0.8813
+Averaged Test AUC: 0.9391
+Std Test Accurancy: 0.1116
+Std Test AUC: 0.0379
+------------------------- time cost ------------------------- 10.29706597328186
+
+-------------Round number: 46-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3244
+Averaged Test Accurancy: 0.8806
+Averaged Test AUC: 0.9399
+Std Test Accurancy: 0.1110
+Std Test AUC: 0.0381
+------------------------- time cost ------------------------- 10.268887281417847
+
+-------------Round number: 47-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3206
+Averaged Test Accurancy: 0.8821
+Averaged Test AUC: 0.9397
+Std Test Accurancy: 0.1110
+Std Test AUC: 0.0380
+------------------------- time cost ------------------------- 10.226744890213013
+
+-------------Round number: 48-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3212
+Averaged Test Accurancy: 0.8828
+Averaged Test AUC: 0.9402
+Std Test Accurancy: 0.1106
+Std Test AUC: 0.0383
+------------------------- time cost ------------------------- 10.276774883270264
+
+-------------Round number: 49-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3171
+Averaged Test Accurancy: 0.8838
+Averaged Test AUC: 0.9406
+Std Test Accurancy: 0.1091
+Std Test AUC: 0.0384
+------------------------- time cost ------------------------- 10.275245666503906
+
+-------------Round number: 50-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3177
+Averaged Test Accurancy: 0.8842
+Averaged Test AUC: 0.9401
+Std Test Accurancy: 0.1086
+Std Test AUC: 0.0382
+------------------------- time cost ------------------------- 10.681547164916992
+
+-------------Round number: 51-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3140
+Averaged Test Accurancy: 0.8847
+Averaged Test AUC: 0.9412
+Std Test Accurancy: 0.1083
+Std Test AUC: 0.0376
+------------------------- time cost ------------------------- 10.520025491714478
+
+-------------Round number: 52-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3125
+Averaged Test Accurancy: 0.8856
+Averaged Test AUC: 0.9412
+Std Test Accurancy: 0.1078
+Std Test AUC: 0.0377
+------------------------- time cost ------------------------- 10.398811340332031
+
+-------------Round number: 53-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3106
+Averaged Test Accurancy: 0.8856
+Averaged Test AUC: 0.9422
+Std Test Accurancy: 0.1065
+Std Test AUC: 0.0374
+------------------------- time cost ------------------------- 10.263473749160767
+
+-------------Round number: 54-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3104
+Averaged Test Accurancy: 0.8835
+Averaged Test AUC: 0.9415
+Std Test Accurancy: 0.1098
+Std Test AUC: 0.0371
+------------------------- time cost ------------------------- 10.921414136886597
+
+-------------Round number: 55-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3083
+Averaged Test Accurancy: 0.8852
+Averaged Test AUC: 0.9417
+Std Test Accurancy: 0.1085
+Std Test AUC: 0.0371
+------------------------- time cost ------------------------- 10.88928771018982
+
+-------------Round number: 56-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3073
+Averaged Test Accurancy: 0.8873
+Averaged Test AUC: 0.9425
+Std Test Accurancy: 0.1057
+Std Test AUC: 0.0370
+------------------------- time cost ------------------------- 10.316747903823853
+
+-------------Round number: 57-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3047
+Averaged Test Accurancy: 0.8867
+Averaged Test AUC: 0.9433
+Std Test Accurancy: 0.1055
+Std Test AUC: 0.0374
+------------------------- time cost ------------------------- 10.252699613571167
+
+-------------Round number: 58-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3045
+Averaged Test Accurancy: 0.8866
+Averaged Test AUC: 0.9427
+Std Test Accurancy: 0.1065
+Std Test AUC: 0.0363
+------------------------- time cost ------------------------- 10.338125228881836
+
+-------------Round number: 59-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.3013
+Averaged Test Accurancy: 0.8878
+Averaged Test AUC: 0.9442
+Std Test Accurancy: 0.1053
+Std Test AUC: 0.0364
+------------------------- time cost ------------------------- 10.379083633422852
+
+-------------Round number: 60-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2999
+Averaged Test Accurancy: 0.8870
+Averaged Test AUC: 0.9439
+Std Test Accurancy: 0.1046
+Std Test AUC: 0.0366
+------------------------- time cost ------------------------- 10.537906169891357
+
+-------------Round number: 61-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2989
+Averaged Test Accurancy: 0.8872
+Averaged Test AUC: 0.9443
+Std Test Accurancy: 0.1055
+Std Test AUC: 0.0365
+------------------------- time cost ------------------------- 10.410828351974487
+
+-------------Round number: 62-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2991
+Averaged Test Accurancy: 0.8870
+Averaged Test AUC: 0.9438
+Std Test Accurancy: 0.1045
+Std Test AUC: 0.0350
+------------------------- time cost ------------------------- 10.782795667648315
+
+-------------Round number: 63-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2954
+Averaged Test Accurancy: 0.8881
+Averaged Test AUC: 0.9459
+Std Test Accurancy: 0.1055
+Std Test AUC: 0.0354
+------------------------- time cost ------------------------- 10.762179613113403
+
+-------------Round number: 64-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2932
+Averaged Test Accurancy: 0.8892
+Averaged Test AUC: 0.9463
+Std Test Accurancy: 0.1029
+Std Test AUC: 0.0354
+------------------------- time cost ------------------------- 10.481663465499878
+
+-------------Round number: 65-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2938
+Averaged Test Accurancy: 0.8878
+Averaged Test AUC: 0.9449
+Std Test Accurancy: 0.1044
+Std Test AUC: 0.0353
+------------------------- time cost ------------------------- 10.573832273483276
+
+-------------Round number: 66-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2903
+Averaged Test Accurancy: 0.8893
+Averaged Test AUC: 0.9460
+Std Test Accurancy: 0.1051
+Std Test AUC: 0.0355
+------------------------- time cost ------------------------- 10.272084712982178
+
+-------------Round number: 67-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2890
+Averaged Test Accurancy: 0.8912
+Averaged Test AUC: 0.9460
+Std Test Accurancy: 0.1035
+Std Test AUC: 0.0350
+------------------------- time cost ------------------------- 10.692859888076782
+
+-------------Round number: 68-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2868
+Averaged Test Accurancy: 0.8905
+Averaged Test AUC: 0.9466
+Std Test Accurancy: 0.1040
+Std Test AUC: 0.0350
+------------------------- time cost ------------------------- 10.993678569793701
+
+-------------Round number: 69-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2858
+Averaged Test Accurancy: 0.8906
+Averaged Test AUC: 0.9468
+Std Test Accurancy: 0.1032
+Std Test AUC: 0.0349
+------------------------- time cost ------------------------- 10.570498704910278
+
+-------------Round number: 70-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2850
+Averaged Test Accurancy: 0.8917
+Averaged Test AUC: 0.9475
+Std Test Accurancy: 0.1028
+Std Test AUC: 0.0352
+------------------------- time cost ------------------------- 10.23255705833435
+
+-------------Round number: 71-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2825
+Averaged Test Accurancy: 0.8918
+Averaged Test AUC: 0.9477
+Std Test Accurancy: 0.1029
+Std Test AUC: 0.0351
+------------------------- time cost ------------------------- 10.237964153289795
+
+-------------Round number: 72-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2818
+Averaged Test Accurancy: 0.8914
+Averaged Test AUC: 0.9481
+Std Test Accurancy: 0.1026
+Std Test AUC: 0.0351
+------------------------- time cost ------------------------- 10.201751708984375
+
+-------------Round number: 73-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2792
+Averaged Test Accurancy: 0.8922
+Averaged Test AUC: 0.9481
+Std Test Accurancy: 0.1028
+Std Test AUC: 0.0350
+------------------------- time cost ------------------------- 10.242513656616211
+
+-------------Round number: 74-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2773
+Averaged Test Accurancy: 0.8930
+Averaged Test AUC: 0.9483
+Std Test Accurancy: 0.1029
+Std Test AUC: 0.0352
+------------------------- time cost ------------------------- 10.231531858444214
+
+-------------Round number: 75-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2766
+Averaged Test Accurancy: 0.8929
+Averaged Test AUC: 0.9482
+Std Test Accurancy: 0.1011
+Std Test AUC: 0.0354
+------------------------- time cost ------------------------- 10.224872827529907
+
+-------------Round number: 76-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2745
+Averaged Test Accurancy: 0.8941
+Averaged Test AUC: 0.9482
+Std Test Accurancy: 0.1019
+Std Test AUC: 0.0345
+------------------------- time cost ------------------------- 10.220778942108154
+
+-------------Round number: 77-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2729
+Averaged Test Accurancy: 0.8939
+Averaged Test AUC: 0.9480
+Std Test Accurancy: 0.1003
+Std Test AUC: 0.0339
+------------------------- time cost ------------------------- 10.324854373931885
+
+-------------Round number: 78-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2714
+Averaged Test Accurancy: 0.8952
+Averaged Test AUC: 0.9485
+Std Test Accurancy: 0.0986
+Std Test AUC: 0.0342
+------------------------- time cost ------------------------- 10.513981580734253
+
+-------------Round number: 79-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2704
+Averaged Test Accurancy: 0.8948
+Averaged Test AUC: 0.9491
+Std Test Accurancy: 0.1024
+Std Test AUC: 0.0340
+------------------------- time cost ------------------------- 10.91733980178833
+
+-------------Round number: 80-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2672
+Averaged Test Accurancy: 0.8964
+Averaged Test AUC: 0.9497
+Std Test Accurancy: 0.1010
+Std Test AUC: 0.0343
+------------------------- time cost ------------------------- 10.310594081878662
+
+-------------Round number: 81-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2673
+Averaged Test Accurancy: 0.8964
+Averaged Test AUC: 0.9491
+Std Test Accurancy: 0.1012
+Std Test AUC: 0.0337
+------------------------- time cost ------------------------- 10.759865760803223
+
+-------------Round number: 82-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2653
+Averaged Test Accurancy: 0.8970
+Averaged Test AUC: 0.9497
+Std Test Accurancy: 0.0986
+Std Test AUC: 0.0339
+------------------------- time cost ------------------------- 10.927224159240723
+
+-------------Round number: 83-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2638
+Averaged Test Accurancy: 0.8964
+Averaged Test AUC: 0.9494
+Std Test Accurancy: 0.1000
+Std Test AUC: 0.0335
+------------------------- time cost ------------------------- 10.906518697738647
+
+-------------Round number: 84-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2615
+Averaged Test Accurancy: 0.8972
+Averaged Test AUC: 0.9494
+Std Test Accurancy: 0.1014
+Std Test AUC: 0.0339
+------------------------- time cost ------------------------- 10.175638675689697
+
+-------------Round number: 85-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2605
+Averaged Test Accurancy: 0.8968
+Averaged Test AUC: 0.9500
+Std Test Accurancy: 0.0991
+Std Test AUC: 0.0336
+------------------------- time cost ------------------------- 10.230375289916992
+
+-------------Round number: 86-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2596
+Averaged Test Accurancy: 0.8970
+Averaged Test AUC: 0.9504
+Std Test Accurancy: 0.0987
+Std Test AUC: 0.0337
+------------------------- time cost ------------------------- 10.219684839248657
+
+-------------Round number: 87-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2572
+Averaged Test Accurancy: 0.8984
+Averaged Test AUC: 0.9499
+Std Test Accurancy: 0.0992
+Std Test AUC: 0.0339
+------------------------- time cost ------------------------- 10.262345314025879
+
+-------------Round number: 88-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2552
+Averaged Test Accurancy: 0.8989
+Averaged Test AUC: 0.9505
+Std Test Accurancy: 0.0974
+Std Test AUC: 0.0339
+------------------------- time cost ------------------------- 10.279508829116821
+
+-------------Round number: 89-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2555
+Averaged Test Accurancy: 0.8988
+Averaged Test AUC: 0.9497
+Std Test Accurancy: 0.0986
+Std Test AUC: 0.0337
+------------------------- time cost ------------------------- 10.20714259147644
+
+-------------Round number: 90-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2525
+Averaged Test Accurancy: 0.8987
+Averaged Test AUC: 0.9509
+Std Test Accurancy: 0.0971
+Std Test AUC: 0.0334
+------------------------- time cost ------------------------- 10.271729707717896
+
+-------------Round number: 91-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2520
+Averaged Test Accurancy: 0.8982
+Averaged Test AUC: 0.9502
+Std Test Accurancy: 0.0987
+Std Test AUC: 0.0338
+------------------------- time cost ------------------------- 10.275535821914673
+
+-------------Round number: 92-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2499
+Averaged Test Accurancy: 0.8996
+Averaged Test AUC: 0.9502
+Std Test Accurancy: 0.0979
+Std Test AUC: 0.0337
+------------------------- time cost ------------------------- 10.284782409667969
+
+-------------Round number: 93-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2486
+Averaged Test Accurancy: 0.9001
+Averaged Test AUC: 0.9509
+Std Test Accurancy: 0.0967
+Std Test AUC: 0.0332
+------------------------- time cost ------------------------- 10.256858348846436
+
+-------------Round number: 94-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2477
+Averaged Test Accurancy: 0.8997
+Averaged Test AUC: 0.9506
+Std Test Accurancy: 0.0993
+Std Test AUC: 0.0332
+------------------------- time cost ------------------------- 10.298759460449219
+
+-------------Round number: 95-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2457
+Averaged Test Accurancy: 0.8997
+Averaged Test AUC: 0.9509
+Std Test Accurancy: 0.0974
+Std Test AUC: 0.0330
+------------------------- time cost ------------------------- 10.280250787734985
+
+-------------Round number: 96-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2450
+Averaged Test Accurancy: 0.9013
+Averaged Test AUC: 0.9508
+Std Test Accurancy: 0.0961
+Std Test AUC: 0.0330
+------------------------- time cost ------------------------- 10.228232383728027
+
+-------------Round number: 97-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2435
+Averaged Test Accurancy: 0.9020
+Averaged Test AUC: 0.9502
+Std Test Accurancy: 0.0965
+Std Test AUC: 0.0331
+------------------------- time cost ------------------------- 10.343910932540894
+
+-------------Round number: 98-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2425
+Averaged Test Accurancy: 0.9020
+Averaged Test AUC: 0.9501
+Std Test Accurancy: 0.0951
+Std Test AUC: 0.0333
+------------------------- time cost ------------------------- 10.279402494430542
+
+-------------Round number: 99-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2400
+Averaged Test Accurancy: 0.9011
+Averaged Test AUC: 0.9499
+Std Test Accurancy: 0.0959
+Std Test AUC: 0.0332
+------------------------- time cost ------------------------- 10.271542310714722
+
+-------------Round number: 100-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2387
+Averaged Test Accurancy: 0.8999
+Averaged Test AUC: 0.9498
+Std Test Accurancy: 0.0962
+Std Test AUC: 0.0329
+------------------------- time cost ------------------------- 10.257514476776123
+
+-------------Round number: 101-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2374
+Averaged Test Accurancy: 0.9016
+Averaged Test AUC: 0.9499
+Std Test Accurancy: 0.0963
+Std Test AUC: 0.0332
+------------------------- time cost ------------------------- 10.272631406784058
+
+-------------Round number: 102-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2354
+Averaged Test Accurancy: 0.9025
+Averaged Test AUC: 0.9503
+Std Test Accurancy: 0.0934
+Std Test AUC: 0.0329
+------------------------- time cost ------------------------- 10.279635429382324
+
+-------------Round number: 103-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2342
+Averaged Test Accurancy: 0.9024
+Averaged Test AUC: 0.9496
+Std Test Accurancy: 0.0951
+Std Test AUC: 0.0335
+------------------------- time cost ------------------------- 10.220252275466919
+
+-------------Round number: 104-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2332
+Averaged Test Accurancy: 0.9016
+Averaged Test AUC: 0.9499
+Std Test Accurancy: 0.0960
+Std Test AUC: 0.0328
+------------------------- time cost ------------------------- 10.278366327285767
+
+-------------Round number: 105-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2322
+Averaged Test Accurancy: 0.9030
+Averaged Test AUC: 0.9503
+Std Test Accurancy: 0.0947
+Std Test AUC: 0.0331
+------------------------- time cost ------------------------- 10.30194902420044
+
+-------------Round number: 106-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2306
+Averaged Test Accurancy: 0.9032
+Averaged Test AUC: 0.9507
+Std Test Accurancy: 0.0965
+Std Test AUC: 0.0331
+------------------------- time cost ------------------------- 10.206494092941284
+
+-------------Round number: 107-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2289
+Averaged Test Accurancy: 0.9037
+Averaged Test AUC: 0.9504
+Std Test Accurancy: 0.0950
+Std Test AUC: 0.0331
+------------------------- time cost ------------------------- 10.256776094436646
+
+-------------Round number: 108-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2275
+Averaged Test Accurancy: 0.9025
+Averaged Test AUC: 0.9503
+Std Test Accurancy: 0.0962
+Std Test AUC: 0.0327
+------------------------- time cost ------------------------- 10.265588521957397
+
+-------------Round number: 109-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2254
+Averaged Test Accurancy: 0.9048
+Averaged Test AUC: 0.9500
+Std Test Accurancy: 0.0937
+Std Test AUC: 0.0327
+------------------------- time cost ------------------------- 10.295868873596191
+
+-------------Round number: 110-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2249
+Averaged Test Accurancy: 0.9042
+Averaged Test AUC: 0.9491
+Std Test Accurancy: 0.0950
+Std Test AUC: 0.0327
+------------------------- time cost ------------------------- 10.216189622879028
+
+-------------Round number: 111-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2224
+Averaged Test Accurancy: 0.9048
+Averaged Test AUC: 0.9494
+Std Test Accurancy: 0.0919
+Std Test AUC: 0.0330
+------------------------- time cost ------------------------- 10.281872987747192
+
+-------------Round number: 112-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2230
+Averaged Test Accurancy: 0.9032
+Averaged Test AUC: 0.9490
+Std Test Accurancy: 0.0958
+Std Test AUC: 0.0330
+------------------------- time cost ------------------------- 10.25244688987732
+
+-------------Round number: 113-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2211
+Averaged Test Accurancy: 0.9052
+Averaged Test AUC: 0.9487
+Std Test Accurancy: 0.0942
+Std Test AUC: 0.0331
+------------------------- time cost ------------------------- 10.311098575592041
+
+-------------Round number: 114-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2195
+Averaged Test Accurancy: 0.9058
+Averaged Test AUC: 0.9493
+Std Test Accurancy: 0.0943
+Std Test AUC: 0.0327
+------------------------- time cost ------------------------- 10.230880975723267
+
+-------------Round number: 115-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2180
+Averaged Test Accurancy: 0.9050
+Averaged Test AUC: 0.9485
+Std Test Accurancy: 0.0944
+Std Test AUC: 0.0324
+------------------------- time cost ------------------------- 10.258358001708984
+
+-------------Round number: 116-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2166
+Averaged Test Accurancy: 0.9048
+Averaged Test AUC: 0.9490
+Std Test Accurancy: 0.0964
+Std Test AUC: 0.0330
+------------------------- time cost ------------------------- 10.272477626800537
+
+-------------Round number: 117-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2148
+Averaged Test Accurancy: 0.9060
+Averaged Test AUC: 0.9482
+Std Test Accurancy: 0.0946
+Std Test AUC: 0.0330
+------------------------- time cost ------------------------- 10.285783529281616
+
+-------------Round number: 118-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2140
+Averaged Test Accurancy: 0.9074
+Averaged Test AUC: 0.9479
+Std Test Accurancy: 0.0926
+Std Test AUC: 0.0336
+------------------------- time cost ------------------------- 10.76282000541687
+
+-------------Round number: 119-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2132
+Averaged Test Accurancy: 0.9068
+Averaged Test AUC: 0.9479
+Std Test Accurancy: 0.0924
+Std Test AUC: 0.0334
+------------------------- time cost ------------------------- 10.32574462890625
+
+-------------Round number: 120-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2113
+Averaged Test Accurancy: 0.9072
+Averaged Test AUC: 0.9484
+Std Test Accurancy: 0.0910
+Std Test AUC: 0.0330
+------------------------- time cost ------------------------- 10.289666414260864
+
+-------------Round number: 121-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2105
+Averaged Test Accurancy: 0.9069
+Averaged Test AUC: 0.9488
+Std Test Accurancy: 0.0929
+Std Test AUC: 0.0336
+------------------------- time cost ------------------------- 10.316715240478516
+
+-------------Round number: 122-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2092
+Averaged Test Accurancy: 0.9057
+Averaged Test AUC: 0.9486
+Std Test Accurancy: 0.0957
+Std Test AUC: 0.0333
+------------------------- time cost ------------------------- 10.294824838638306
+
+-------------Round number: 123-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2085
+Averaged Test Accurancy: 0.9064
+Averaged Test AUC: 0.9475
+Std Test Accurancy: 0.0936
+Std Test AUC: 0.0329
+------------------------- time cost ------------------------- 10.279227495193481
+
+-------------Round number: 124-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2065
+Averaged Test Accurancy: 0.9086
+Averaged Test AUC: 0.9478
+Std Test Accurancy: 0.0912
+Std Test AUC: 0.0328
+------------------------- time cost ------------------------- 10.286487102508545
+
+-------------Round number: 125-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2047
+Averaged Test Accurancy: 0.9062
+Averaged Test AUC: 0.9469
+Std Test Accurancy: 0.0949
+Std Test AUC: 0.0333
+------------------------- time cost ------------------------- 10.248876571655273
+
+-------------Round number: 126-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2031
+Averaged Test Accurancy: 0.9069
+Averaged Test AUC: 0.9471
+Std Test Accurancy: 0.0928
+Std Test AUC: 0.0331
+------------------------- time cost ------------------------- 10.256430625915527
+
+-------------Round number: 127-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2019
+Averaged Test Accurancy: 0.9068
+Averaged Test AUC: 0.9469
+Std Test Accurancy: 0.0939
+Std Test AUC: 0.0334
+------------------------- time cost ------------------------- 10.228355884552002
+
+-------------Round number: 128-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2014
+Averaged Test Accurancy: 0.9066
+Averaged Test AUC: 0.9468
+Std Test Accurancy: 0.0932
+Std Test AUC: 0.0327
+------------------------- time cost ------------------------- 10.224376678466797
+
+-------------Round number: 129-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.2009
+Averaged Test Accurancy: 0.9082
+Averaged Test AUC: 0.9460
+Std Test Accurancy: 0.0933
+Std Test AUC: 0.0326
+------------------------- time cost ------------------------- 10.225883483886719
+
+-------------Round number: 130-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1984
+Averaged Test Accurancy: 0.9086
+Averaged Test AUC: 0.9458
+Std Test Accurancy: 0.0930
+Std Test AUC: 0.0336
+------------------------- time cost ------------------------- 10.17743444442749
+
+-------------Round number: 131-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1983
+Averaged Test Accurancy: 0.9079
+Averaged Test AUC: 0.9450
+Std Test Accurancy: 0.0944
+Std Test AUC: 0.0338
+------------------------- time cost ------------------------- 10.220431327819824
+
+-------------Round number: 132-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1969
+Averaged Test Accurancy: 0.9082
+Averaged Test AUC: 0.9446
+Std Test Accurancy: 0.0920
+Std Test AUC: 0.0332
+------------------------- time cost ------------------------- 10.24101209640503
+
+-------------Round number: 133-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1949
+Averaged Test Accurancy: 0.9088
+Averaged Test AUC: 0.9456
+Std Test Accurancy: 0.0938
+Std Test AUC: 0.0330
+------------------------- time cost ------------------------- 10.220514297485352
+
+-------------Round number: 134-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1941
+Averaged Test Accurancy: 0.9080
+Averaged Test AUC: 0.9448
+Std Test Accurancy: 0.0944
+Std Test AUC: 0.0339
+------------------------- time cost ------------------------- 10.29392123222351
+
+-------------Round number: 135-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1931
+Averaged Test Accurancy: 0.9087
+Averaged Test AUC: 0.9452
+Std Test Accurancy: 0.0931
+Std Test AUC: 0.0328
+------------------------- time cost ------------------------- 10.28489089012146
+
+-------------Round number: 136-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1914
+Averaged Test Accurancy: 0.9080
+Averaged Test AUC: 0.9447
+Std Test Accurancy: 0.0937
+Std Test AUC: 0.0336
+------------------------- time cost ------------------------- 10.28101134300232
+
+-------------Round number: 137-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1908
+Averaged Test Accurancy: 0.9086
+Averaged Test AUC: 0.9450
+Std Test Accurancy: 0.0959
+Std Test AUC: 0.0342
+------------------------- time cost ------------------------- 10.279929637908936
+
+-------------Round number: 138-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1895
+Averaged Test Accurancy: 0.9082
+Averaged Test AUC: 0.9446
+Std Test Accurancy: 0.0937
+Std Test AUC: 0.0338
+------------------------- time cost ------------------------- 10.813098430633545
+
+-------------Round number: 139-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1883
+Averaged Test Accurancy: 0.9087
+Averaged Test AUC: 0.9443
+Std Test Accurancy: 0.0930
+Std Test AUC: 0.0336
+------------------------- time cost ------------------------- 10.309576988220215
+
+-------------Round number: 140-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1867
+Averaged Test Accurancy: 0.9094
+Averaged Test AUC: 0.9437
+Std Test Accurancy: 0.0930
+Std Test AUC: 0.0340
+------------------------- time cost ------------------------- 10.275110960006714
+
+-------------Round number: 141-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1852
+Averaged Test Accurancy: 0.9098
+Averaged Test AUC: 0.9428
+Std Test Accurancy: 0.0938
+Std Test AUC: 0.0338
+------------------------- time cost ------------------------- 10.20961594581604
+
+-------------Round number: 142-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1846
+Averaged Test Accurancy: 0.9098
+Averaged Test AUC: 0.9435
+Std Test Accurancy: 0.0924
+Std Test AUC: 0.0343
+------------------------- time cost ------------------------- 10.25760531425476
+
+-------------Round number: 143-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1825
+Averaged Test Accurancy: 0.9090
+Averaged Test AUC: 0.9422
+Std Test Accurancy: 0.0950
+Std Test AUC: 0.0342
+------------------------- time cost ------------------------- 10.533775329589844
+
+-------------Round number: 144-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1819
+Averaged Test Accurancy: 0.9086
+Averaged Test AUC: 0.9416
+Std Test Accurancy: 0.0935
+Std Test AUC: 0.0346
+------------------------- time cost ------------------------- 10.904147863388062
+
+-------------Round number: 145-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1803
+Averaged Test Accurancy: 0.9090
+Averaged Test AUC: 0.9407
+Std Test Accurancy: 0.0930
+Std Test AUC: 0.0344
+------------------------- time cost ------------------------- 10.567473649978638
+
+-------------Round number: 146-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1794
+Averaged Test Accurancy: 0.9103
+Averaged Test AUC: 0.9423
+Std Test Accurancy: 0.0917
+Std Test AUC: 0.0343
+------------------------- time cost ------------------------- 10.218971014022827
+
+-------------Round number: 147-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1781
+Averaged Test Accurancy: 0.9099
+Averaged Test AUC: 0.9416
+Std Test Accurancy: 0.0933
+Std Test AUC: 0.0337
+------------------------- time cost ------------------------- 10.175197839736938
+
+-------------Round number: 148-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1771
+Averaged Test Accurancy: 0.9098
+Averaged Test AUC: 0.9410
+Std Test Accurancy: 0.0932
+Std Test AUC: 0.0336
+------------------------- time cost ------------------------- 10.447164058685303
+
+-------------Round number: 149-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1754
+Averaged Test Accurancy: 0.9096
+Averaged Test AUC: 0.9410
+Std Test Accurancy: 0.0931
+Std Test AUC: 0.0343
+------------------------- time cost ------------------------- 10.81744933128357
+
+-------------Round number: 150-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1744
+Averaged Test Accurancy: 0.9107
+Averaged Test AUC: 0.9402
+Std Test Accurancy: 0.0922
+Std Test AUC: 0.0338
+------------------------- time cost ------------------------- 10.300144910812378
+
+-------------Round number: 151-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1735
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.9410
+Std Test Accurancy: 0.0918
+Std Test AUC: 0.0342
+------------------------- time cost ------------------------- 10.218786239624023
+
+-------------Round number: 152-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1724
+Averaged Test Accurancy: 0.9102
+Averaged Test AUC: 0.9407
+Std Test Accurancy: 0.0931
+Std Test AUC: 0.0336
+------------------------- time cost ------------------------- 10.244551181793213
+
+-------------Round number: 153-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1714
+Averaged Test Accurancy: 0.9097
+Averaged Test AUC: 0.9392
+Std Test Accurancy: 0.0934
+Std Test AUC: 0.0347
+------------------------- time cost ------------------------- 10.256590604782104
+
+-------------Round number: 154-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1703
+Averaged Test Accurancy: 0.9109
+Averaged Test AUC: 0.9396
+Std Test Accurancy: 0.0921
+Std Test AUC: 0.0344
+------------------------- time cost ------------------------- 10.189743995666504
+
+-------------Round number: 155-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1690
+Averaged Test Accurancy: 0.9106
+Averaged Test AUC: 0.9385
+Std Test Accurancy: 0.0929
+Std Test AUC: 0.0347
+------------------------- time cost ------------------------- 10.303706645965576
+
+-------------Round number: 156-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1673
+Averaged Test Accurancy: 0.9109
+Averaged Test AUC: 0.9391
+Std Test Accurancy: 0.0921
+Std Test AUC: 0.0344
+------------------------- time cost ------------------------- 10.326548099517822
+
+-------------Round number: 157-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1676
+Averaged Test Accurancy: 0.9088
+Averaged Test AUC: 0.9394
+Std Test Accurancy: 0.0943
+Std Test AUC: 0.0345
+------------------------- time cost ------------------------- 10.237341403961182
+
+-------------Round number: 158-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1650
+Averaged Test Accurancy: 0.9110
+Averaged Test AUC: 0.9396
+Std Test Accurancy: 0.0923
+Std Test AUC: 0.0347
+------------------------- time cost ------------------------- 10.226078748703003
+
+-------------Round number: 159-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1640
+Averaged Test Accurancy: 0.9096
+Averaged Test AUC: 0.9378
+Std Test Accurancy: 0.0939
+Std Test AUC: 0.0346
+------------------------- time cost ------------------------- 10.568313360214233
+
+-------------Round number: 160-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1636
+Averaged Test Accurancy: 0.9098
+Averaged Test AUC: 0.9376
+Std Test Accurancy: 0.0922
+Std Test AUC: 0.0346
+------------------------- time cost ------------------------- 10.190066814422607
+
+-------------Round number: 161-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1626
+Averaged Test Accurancy: 0.9107
+Averaged Test AUC: 0.9368
+Std Test Accurancy: 0.0916
+Std Test AUC: 0.0342
+------------------------- time cost ------------------------- 10.221410989761353
+
+-------------Round number: 162-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1612
+Averaged Test Accurancy: 0.9102
+Averaged Test AUC: 0.9368
+Std Test Accurancy: 0.0922
+Std Test AUC: 0.0347
+------------------------- time cost ------------------------- 10.243832111358643
+
+-------------Round number: 163-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1598
+Averaged Test Accurancy: 0.9104
+Averaged Test AUC: 0.9362
+Std Test Accurancy: 0.0920
+Std Test AUC: 0.0345
+------------------------- time cost ------------------------- 10.237860441207886
+
+-------------Round number: 164-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1585
+Averaged Test Accurancy: 0.9110
+Averaged Test AUC: 0.9356
+Std Test Accurancy: 0.0918
+Std Test AUC: 0.0351
+------------------------- time cost ------------------------- 10.253917455673218
+
+-------------Round number: 165-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1576
+Averaged Test Accurancy: 0.9109
+Averaged Test AUC: 0.9359
+Std Test Accurancy: 0.0923
+Std Test AUC: 0.0347
+------------------------- time cost ------------------------- 10.29091763496399
+
+-------------Round number: 166-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1559
+Averaged Test Accurancy: 0.9106
+Averaged Test AUC: 0.9344
+Std Test Accurancy: 0.0898
+Std Test AUC: 0.0349
+------------------------- time cost ------------------------- 10.18003535270691
+
+-------------Round number: 167-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1553
+Averaged Test Accurancy: 0.9107
+Averaged Test AUC: 0.9353
+Std Test Accurancy: 0.0909
+Std Test AUC: 0.0355
+------------------------- time cost ------------------------- 10.210123062133789
+
+-------------Round number: 168-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1546
+Averaged Test Accurancy: 0.9111
+Averaged Test AUC: 0.9353
+Std Test Accurancy: 0.0924
+Std Test AUC: 0.0345
+------------------------- time cost ------------------------- 10.227941751480103
+
+-------------Round number: 169-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1526
+Averaged Test Accurancy: 0.9117
+Averaged Test AUC: 0.9348
+Std Test Accurancy: 0.0907
+Std Test AUC: 0.0344
+------------------------- time cost ------------------------- 10.276142835617065
+
+-------------Round number: 170-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1519
+Averaged Test Accurancy: 0.9110
+Averaged Test AUC: 0.9349
+Std Test Accurancy: 0.0928
+Std Test AUC: 0.0347
+------------------------- time cost ------------------------- 10.847331523895264
+
+-------------Round number: 171-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1503
+Averaged Test Accurancy: 0.9110
+Averaged Test AUC: 0.9342
+Std Test Accurancy: 0.0910
+Std Test AUC: 0.0348
+------------------------- time cost ------------------------- 10.531425952911377
+
+-------------Round number: 172-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1496
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.9341
+Std Test Accurancy: 0.0918
+Std Test AUC: 0.0354
+------------------------- time cost ------------------------- 10.3019380569458
+
+-------------Round number: 173-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1480
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.9338
+Std Test Accurancy: 0.0899
+Std Test AUC: 0.0354
+------------------------- time cost ------------------------- 10.73746132850647
+
+-------------Round number: 174-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1472
+Averaged Test Accurancy: 0.9123
+Averaged Test AUC: 0.9322
+Std Test Accurancy: 0.0898
+Std Test AUC: 0.0345
+------------------------- time cost ------------------------- 10.942145347595215
+
+-------------Round number: 175-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1467
+Averaged Test Accurancy: 0.9108
+Averaged Test AUC: 0.9316
+Std Test Accurancy: 0.0923
+Std Test AUC: 0.0357
+------------------------- time cost ------------------------- 10.893612384796143
+
+-------------Round number: 176-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1454
+Averaged Test Accurancy: 0.9115
+Averaged Test AUC: 0.9324
+Std Test Accurancy: 0.0910
+Std Test AUC: 0.0358
+------------------------- time cost ------------------------- 10.167917490005493
+
+-------------Round number: 177-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1447
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.9317
+Std Test Accurancy: 0.0912
+Std Test AUC: 0.0351
+------------------------- time cost ------------------------- 10.267423391342163
+
+-------------Round number: 178-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1438
+Averaged Test Accurancy: 0.9117
+Averaged Test AUC: 0.9314
+Std Test Accurancy: 0.0912
+Std Test AUC: 0.0356
+------------------------- time cost ------------------------- 10.261152982711792
+
+-------------Round number: 179-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1431
+Averaged Test Accurancy: 0.9114
+Averaged Test AUC: 0.9298
+Std Test Accurancy: 0.0905
+Std Test AUC: 0.0355
+------------------------- time cost ------------------------- 10.253666639328003
+
+-------------Round number: 180-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1407
+Averaged Test Accurancy: 0.9122
+Averaged Test AUC: 0.9305
+Std Test Accurancy: 0.0901
+Std Test AUC: 0.0356
+------------------------- time cost ------------------------- 10.187031507492065
+
+-------------Round number: 181-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1400
+Averaged Test Accurancy: 0.9120
+Averaged Test AUC: 0.9298
+Std Test Accurancy: 0.0908
+Std Test AUC: 0.0357
+------------------------- time cost ------------------------- 10.380988359451294
+
+-------------Round number: 182-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1389
+Averaged Test Accurancy: 0.9114
+Averaged Test AUC: 0.9286
+Std Test Accurancy: 0.0912
+Std Test AUC: 0.0360
+------------------------- time cost ------------------------- 10.472160339355469
+
+-------------Round number: 183-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1377
+Averaged Test Accurancy: 0.9115
+Averaged Test AUC: 0.9288
+Std Test Accurancy: 0.0916
+Std Test AUC: 0.0361
+------------------------- time cost ------------------------- 10.196068048477173
+
+-------------Round number: 184-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1366
+Averaged Test Accurancy: 0.9127
+Averaged Test AUC: 0.9292
+Std Test Accurancy: 0.0905
+Std Test AUC: 0.0362
+------------------------- time cost ------------------------- 10.78288722038269
+
+-------------Round number: 185-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1359
+Averaged Test Accurancy: 0.9133
+Averaged Test AUC: 0.9283
+Std Test Accurancy: 0.0907
+Std Test AUC: 0.0360
+------------------------- time cost ------------------------- 10.23930835723877
+
+-------------Round number: 186-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1348
+Averaged Test Accurancy: 0.9124
+Averaged Test AUC: 0.9284
+Std Test Accurancy: 0.0914
+Std Test AUC: 0.0363
+------------------------- time cost ------------------------- 10.321324110031128
+
+-------------Round number: 187-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1337
+Averaged Test Accurancy: 0.9108
+Averaged Test AUC: 0.9271
+Std Test Accurancy: 0.0921
+Std Test AUC: 0.0365
+------------------------- time cost ------------------------- 10.720537900924683
+
+-------------Round number: 188-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1332
+Averaged Test Accurancy: 0.9117
+Averaged Test AUC: 0.9268
+Std Test Accurancy: 0.0909
+Std Test AUC: 0.0361
+------------------------- time cost ------------------------- 10.458256959915161
+
+-------------Round number: 189-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1328
+Averaged Test Accurancy: 0.9108
+Averaged Test AUC: 0.9262
+Std Test Accurancy: 0.0915
+Std Test AUC: 0.0359
+------------------------- time cost ------------------------- 10.223172187805176
+
+-------------Round number: 190-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1310
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.9262
+Std Test Accurancy: 0.0903
+Std Test AUC: 0.0357
+------------------------- time cost ------------------------- 10.437875032424927
+
+-------------Round number: 191-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1295
+Averaged Test Accurancy: 0.9113
+Averaged Test AUC: 0.9245
+Std Test Accurancy: 0.0914
+Std Test AUC: 0.0367
+------------------------- time cost ------------------------- 10.431687593460083
+
+-------------Round number: 192-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1288
+Averaged Test Accurancy: 0.9118
+Averaged Test AUC: 0.9251
+Std Test Accurancy: 0.0912
+Std Test AUC: 0.0362
+------------------------- time cost ------------------------- 10.29221224784851
+
+-------------Round number: 193-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1281
+Averaged Test Accurancy: 0.9122
+Averaged Test AUC: 0.9257
+Std Test Accurancy: 0.0918
+Std Test AUC: 0.0366
+------------------------- time cost ------------------------- 10.663689851760864
+
+-------------Round number: 194-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1262
+Averaged Test Accurancy: 0.9124
+Averaged Test AUC: 0.9255
+Std Test Accurancy: 0.0898
+Std Test AUC: 0.0368
+------------------------- time cost ------------------------- 10.22757887840271
+
+-------------Round number: 195-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1267
+Averaged Test Accurancy: 0.9118
+Averaged Test AUC: 0.9237
+Std Test Accurancy: 0.0905
+Std Test AUC: 0.0373
+------------------------- time cost ------------------------- 10.51179051399231
+
+-------------Round number: 196-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1255
+Averaged Test Accurancy: 0.9121
+Averaged Test AUC: 0.9240
+Std Test Accurancy: 0.0896
+Std Test AUC: 0.0366
+------------------------- time cost ------------------------- 10.502572536468506
+
+-------------Round number: 197-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1236
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.9236
+Std Test Accurancy: 0.0911
+Std Test AUC: 0.0374
+------------------------- time cost ------------------------- 10.361459016799927
+
+-------------Round number: 198-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1223
+Averaged Test Accurancy: 0.9132
+Averaged Test AUC: 0.9238
+Std Test Accurancy: 0.0896
+Std Test AUC: 0.0373
+------------------------- time cost ------------------------- 10.235684394836426
+
+-------------Round number: 199-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1216
+Averaged Test Accurancy: 0.9126
+Averaged Test AUC: 0.9223
+Std Test Accurancy: 0.0898
+Std Test AUC: 0.0367
+------------------------- time cost ------------------------- 10.19079041481018
+
+-------------Round number: 200-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1206
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.9215
+Std Test Accurancy: 0.0911
+Std Test AUC: 0.0371
+------------------------- time cost ------------------------- 10.29387378692627
+
+-------------Round number: 201-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1199
+Averaged Test Accurancy: 0.9118
+Averaged Test AUC: 0.9211
+Std Test Accurancy: 0.0914
+Std Test AUC: 0.0377
+------------------------- time cost ------------------------- 10.292354106903076
+
+-------------Round number: 202-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1186
+Averaged Test Accurancy: 0.9128
+Averaged Test AUC: 0.9211
+Std Test Accurancy: 0.0908
+Std Test AUC: 0.0375
+------------------------- time cost ------------------------- 10.43532395362854
+
+-------------Round number: 203-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1181
+Averaged Test Accurancy: 0.9126
+Averaged Test AUC: 0.9197
+Std Test Accurancy: 0.0911
+Std Test AUC: 0.0375
+------------------------- time cost ------------------------- 10.234425783157349
+
+-------------Round number: 204-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1172
+Averaged Test Accurancy: 0.9120
+Averaged Test AUC: 0.9187
+Std Test Accurancy: 0.0914
+Std Test AUC: 0.0370
+------------------------- time cost ------------------------- 10.218541622161865
+
+-------------Round number: 205-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1162
+Averaged Test Accurancy: 0.9118
+Averaged Test AUC: 0.9191
+Std Test Accurancy: 0.0913
+Std Test AUC: 0.0373
+------------------------- time cost ------------------------- 10.217980146408081
+
+-------------Round number: 206-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1149
+Averaged Test Accurancy: 0.9114
+Averaged Test AUC: 0.9196
+Std Test Accurancy: 0.0916
+Std Test AUC: 0.0379
+------------------------- time cost ------------------------- 10.485676765441895
+
+-------------Round number: 207-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1137
+Averaged Test Accurancy: 0.9126
+Averaged Test AUC: 0.9194
+Std Test Accurancy: 0.0889
+Std Test AUC: 0.0377
+------------------------- time cost ------------------------- 11.003540992736816
+
+-------------Round number: 208-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1132
+Averaged Test Accurancy: 0.9126
+Averaged Test AUC: 0.9191
+Std Test Accurancy: 0.0896
+Std Test AUC: 0.0376
+------------------------- time cost ------------------------- 10.259872436523438
+
+-------------Round number: 209-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1123
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.9193
+Std Test Accurancy: 0.0929
+Std Test AUC: 0.0376
+------------------------- time cost ------------------------- 10.234561443328857
+
+-------------Round number: 210-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1116
+Averaged Test Accurancy: 0.9122
+Averaged Test AUC: 0.9173
+Std Test Accurancy: 0.0904
+Std Test AUC: 0.0377
+------------------------- time cost ------------------------- 10.273210048675537
+
+-------------Round number: 211-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1103
+Averaged Test Accurancy: 0.9120
+Averaged Test AUC: 0.9171
+Std Test Accurancy: 0.0908
+Std Test AUC: 0.0379
+------------------------- time cost ------------------------- 10.335463762283325
+
+-------------Round number: 212-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1088
+Averaged Test Accurancy: 0.9124
+Averaged Test AUC: 0.9160
+Std Test Accurancy: 0.0909
+Std Test AUC: 0.0376
+------------------------- time cost ------------------------- 10.28119444847107
+
+-------------Round number: 213-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1083
+Averaged Test Accurancy: 0.9127
+Averaged Test AUC: 0.9163
+Std Test Accurancy: 0.0872
+Std Test AUC: 0.0373
+------------------------- time cost ------------------------- 10.207718133926392
+
+-------------Round number: 214-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1077
+Averaged Test Accurancy: 0.9121
+Averaged Test AUC: 0.9147
+Std Test Accurancy: 0.0911
+Std Test AUC: 0.0379
+------------------------- time cost ------------------------- 10.612127780914307
+
+-------------Round number: 215-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1066
+Averaged Test Accurancy: 0.9108
+Averaged Test AUC: 0.9148
+Std Test Accurancy: 0.0910
+Std Test AUC: 0.0379
+------------------------- time cost ------------------------- 10.33469009399414
+
+-------------Round number: 216-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1056
+Averaged Test Accurancy: 0.9117
+Averaged Test AUC: 0.9137
+Std Test Accurancy: 0.0907
+Std Test AUC: 0.0386
+------------------------- time cost ------------------------- 10.275952100753784
+
+-------------Round number: 217-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1053
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.9136
+Std Test Accurancy: 0.0916
+Std Test AUC: 0.0383
+------------------------- time cost ------------------------- 10.338130950927734
+
+-------------Round number: 218-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1034
+Averaged Test Accurancy: 0.9126
+Averaged Test AUC: 0.9148
+Std Test Accurancy: 0.0905
+Std Test AUC: 0.0386
+------------------------- time cost ------------------------- 10.223373174667358
+
+-------------Round number: 219-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1025
+Averaged Test Accurancy: 0.9125
+Averaged Test AUC: 0.9148
+Std Test Accurancy: 0.0902
+Std Test AUC: 0.0387
+------------------------- time cost ------------------------- 10.282693147659302
+
+-------------Round number: 220-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1027
+Averaged Test Accurancy: 0.9109
+Averaged Test AUC: 0.9131
+Std Test Accurancy: 0.0917
+Std Test AUC: 0.0372
+------------------------- time cost ------------------------- 10.26072645187378
+
+-------------Round number: 221-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1014
+Averaged Test Accurancy: 0.9118
+Averaged Test AUC: 0.9119
+Std Test Accurancy: 0.0915
+Std Test AUC: 0.0387
+------------------------- time cost ------------------------- 10.450174570083618
+
+-------------Round number: 222-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.1005
+Averaged Test Accurancy: 0.9113
+Averaged Test AUC: 0.9116
+Std Test Accurancy: 0.0918
+Std Test AUC: 0.0386
+------------------------- time cost ------------------------- 10.813149690628052
+
+-------------Round number: 223-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0991
+Averaged Test Accurancy: 0.9117
+Averaged Test AUC: 0.9116
+Std Test Accurancy: 0.0917
+Std Test AUC: 0.0385
+------------------------- time cost ------------------------- 10.230921506881714
+
+-------------Round number: 224-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0988
+Averaged Test Accurancy: 0.9123
+Averaged Test AUC: 0.9103
+Std Test Accurancy: 0.0928
+Std Test AUC: 0.0392
+------------------------- time cost ------------------------- 10.311025381088257
+
+-------------Round number: 225-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0980
+Averaged Test Accurancy: 0.9121
+Averaged Test AUC: 0.9107
+Std Test Accurancy: 0.0930
+Std Test AUC: 0.0393
+------------------------- time cost ------------------------- 10.32552194595337
+
+-------------Round number: 226-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0968
+Averaged Test Accurancy: 0.9123
+Averaged Test AUC: 0.9105
+Std Test Accurancy: 0.0917
+Std Test AUC: 0.0393
+------------------------- time cost ------------------------- 10.214905977249146
+
+-------------Round number: 227-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0961
+Averaged Test Accurancy: 0.9110
+Averaged Test AUC: 0.9085
+Std Test Accurancy: 0.0915
+Std Test AUC: 0.0390
+------------------------- time cost ------------------------- 10.24946928024292
+
+-------------Round number: 228-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0949
+Averaged Test Accurancy: 0.9115
+Averaged Test AUC: 0.9079
+Std Test Accurancy: 0.0937
+Std Test AUC: 0.0398
+------------------------- time cost ------------------------- 10.495555877685547
+
+-------------Round number: 229-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0944
+Averaged Test Accurancy: 0.9122
+Averaged Test AUC: 0.9082
+Std Test Accurancy: 0.0919
+Std Test AUC: 0.0399
+------------------------- time cost ------------------------- 10.410820960998535
+
+-------------Round number: 230-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0938
+Averaged Test Accurancy: 0.9114
+Averaged Test AUC: 0.9073
+Std Test Accurancy: 0.0916
+Std Test AUC: 0.0399
+------------------------- time cost ------------------------- 10.271892547607422
+
+-------------Round number: 231-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0927
+Averaged Test Accurancy: 0.9121
+Averaged Test AUC: 0.9065
+Std Test Accurancy: 0.0923
+Std Test AUC: 0.0406
+------------------------- time cost ------------------------- 10.220987796783447
+
+-------------Round number: 232-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0916
+Averaged Test Accurancy: 0.9117
+Averaged Test AUC: 0.9066
+Std Test Accurancy: 0.0919
+Std Test AUC: 0.0399
+------------------------- time cost ------------------------- 10.24721622467041
+
+-------------Round number: 233-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0912
+Averaged Test Accurancy: 0.9108
+Averaged Test AUC: 0.9055
+Std Test Accurancy: 0.0912
+Std Test AUC: 0.0400
+------------------------- time cost ------------------------- 10.240744590759277
+
+-------------Round number: 234-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0904
+Averaged Test Accurancy: 0.9118
+Averaged Test AUC: 0.9047
+Std Test Accurancy: 0.0910
+Std Test AUC: 0.0405
+------------------------- time cost ------------------------- 10.352880954742432
+
+-------------Round number: 235-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0895
+Averaged Test Accurancy: 0.9108
+Averaged Test AUC: 0.9040
+Std Test Accurancy: 0.0917
+Std Test AUC: 0.0402
+------------------------- time cost ------------------------- 10.662560224533081
+
+-------------Round number: 236-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0885
+Averaged Test Accurancy: 0.9122
+Averaged Test AUC: 0.9035
+Std Test Accurancy: 0.0910
+Std Test AUC: 0.0406
+------------------------- time cost ------------------------- 10.461307764053345
+
+-------------Round number: 237-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0881
+Averaged Test Accurancy: 0.9106
+Averaged Test AUC: 0.9033
+Std Test Accurancy: 0.0925
+Std Test AUC: 0.0407
+------------------------- time cost ------------------------- 10.831249237060547
+
+-------------Round number: 238-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0873
+Averaged Test Accurancy: 0.9106
+Averaged Test AUC: 0.9025
+Std Test Accurancy: 0.0927
+Std Test AUC: 0.0407
+------------------------- time cost ------------------------- 10.91534161567688
+
+-------------Round number: 239-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0860
+Averaged Test Accurancy: 0.9115
+Averaged Test AUC: 0.9012
+Std Test Accurancy: 0.0930
+Std Test AUC: 0.0410
+------------------------- time cost ------------------------- 10.573857069015503
+
+-------------Round number: 240-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0856
+Averaged Test Accurancy: 0.9124
+Averaged Test AUC: 0.9011
+Std Test Accurancy: 0.0911
+Std Test AUC: 0.0407
+------------------------- time cost ------------------------- 10.47780728340149
+
+-------------Round number: 241-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0852
+Averaged Test Accurancy: 0.9113
+Averaged Test AUC: 0.9002
+Std Test Accurancy: 0.0933
+Std Test AUC: 0.0419
+------------------------- time cost ------------------------- 10.347362279891968
+
+-------------Round number: 242-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0844
+Averaged Test Accurancy: 0.9115
+Averaged Test AUC: 0.9007
+Std Test Accurancy: 0.0930
+Std Test AUC: 0.0412
+------------------------- time cost ------------------------- 10.28831434249878
+
+-------------Round number: 243-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0835
+Averaged Test Accurancy: 0.9108
+Averaged Test AUC: 0.9000
+Std Test Accurancy: 0.0919
+Std Test AUC: 0.0413
+------------------------- time cost ------------------------- 10.334421634674072
+
+-------------Round number: 244-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0829
+Averaged Test Accurancy: 0.9108
+Averaged Test AUC: 0.8985
+Std Test Accurancy: 0.0922
+Std Test AUC: 0.0413
+------------------------- time cost ------------------------- 10.273988485336304
+
+-------------Round number: 245-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0822
+Averaged Test Accurancy: 0.9108
+Averaged Test AUC: 0.8994
+Std Test Accurancy: 0.0913
+Std Test AUC: 0.0407
+------------------------- time cost ------------------------- 10.294499397277832
+
+-------------Round number: 246-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0810
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.8990
+Std Test Accurancy: 0.0914
+Std Test AUC: 0.0407
+------------------------- time cost ------------------------- 10.309584856033325
+
+-------------Round number: 247-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0802
+Averaged Test Accurancy: 0.9119
+Averaged Test AUC: 0.8976
+Std Test Accurancy: 0.0912
+Std Test AUC: 0.0409
+------------------------- time cost ------------------------- 10.370179653167725
+
+-------------Round number: 248-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0797
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.8970
+Std Test Accurancy: 0.0913
+Std Test AUC: 0.0409
+------------------------- time cost ------------------------- 10.263155460357666
+
+-------------Round number: 249-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0788
+Averaged Test Accurancy: 0.9114
+Averaged Test AUC: 0.8967
+Std Test Accurancy: 0.0932
+Std Test AUC: 0.0417
+------------------------- time cost ------------------------- 10.238798141479492
+
+-------------Round number: 250-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0782
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.8949
+Std Test Accurancy: 0.0916
+Std Test AUC: 0.0417
+------------------------- time cost ------------------------- 10.251634359359741
+
+-------------Round number: 251-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0771
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.8954
+Std Test Accurancy: 0.0923
+Std Test AUC: 0.0416
+------------------------- time cost ------------------------- 10.215952634811401
+
+-------------Round number: 252-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0772
+Averaged Test Accurancy: 0.9115
+Averaged Test AUC: 0.8944
+Std Test Accurancy: 0.0919
+Std Test AUC: 0.0423
+------------------------- time cost ------------------------- 10.284465312957764
+
+-------------Round number: 253-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0761
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.8947
+Std Test Accurancy: 0.0917
+Std Test AUC: 0.0426
+------------------------- time cost ------------------------- 10.272815465927124
+
+-------------Round number: 254-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0751
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.8938
+Std Test Accurancy: 0.0934
+Std Test AUC: 0.0419
+------------------------- time cost ------------------------- 10.271615028381348
+
+-------------Round number: 255-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0744
+Averaged Test Accurancy: 0.9110
+Averaged Test AUC: 0.8931
+Std Test Accurancy: 0.0915
+Std Test AUC: 0.0420
+------------------------- time cost ------------------------- 10.192253351211548
+
+-------------Round number: 256-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0738
+Averaged Test Accurancy: 0.9114
+Averaged Test AUC: 0.8932
+Std Test Accurancy: 0.0919
+Std Test AUC: 0.0420
+------------------------- time cost ------------------------- 10.468101501464844
+
+-------------Round number: 257-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0730
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.8928
+Std Test Accurancy: 0.0917
+Std Test AUC: 0.0417
+------------------------- time cost ------------------------- 10.281496286392212
+
+-------------Round number: 258-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0727
+Averaged Test Accurancy: 0.9123
+Averaged Test AUC: 0.8918
+Std Test Accurancy: 0.0910
+Std Test AUC: 0.0420
+------------------------- time cost ------------------------- 10.320064783096313
+
+-------------Round number: 259-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0725
+Averaged Test Accurancy: 0.9103
+Averaged Test AUC: 0.8901
+Std Test Accurancy: 0.0914
+Std Test AUC: 0.0416
+------------------------- time cost ------------------------- 10.240535736083984
+
+-------------Round number: 260-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0710
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.8907
+Std Test Accurancy: 0.0916
+Std Test AUC: 0.0423
+------------------------- time cost ------------------------- 10.256480693817139
+
+-------------Round number: 261-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0703
+Averaged Test Accurancy: 0.9118
+Averaged Test AUC: 0.8906
+Std Test Accurancy: 0.0914
+Std Test AUC: 0.0426
+------------------------- time cost ------------------------- 10.487983465194702
+
+-------------Round number: 262-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0700
+Averaged Test Accurancy: 0.9105
+Averaged Test AUC: 0.8890
+Std Test Accurancy: 0.0921
+Std Test AUC: 0.0423
+------------------------- time cost ------------------------- 10.776793479919434
+
+-------------Round number: 263-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0692
+Averaged Test Accurancy: 0.9106
+Averaged Test AUC: 0.8882
+Std Test Accurancy: 0.0918
+Std Test AUC: 0.0428
+------------------------- time cost ------------------------- 10.809504747390747
+
+-------------Round number: 264-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0688
+Averaged Test Accurancy: 0.9102
+Averaged Test AUC: 0.8875
+Std Test Accurancy: 0.0916
+Std Test AUC: 0.0430
+------------------------- time cost ------------------------- 10.875476360321045
+
+-------------Round number: 265-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0680
+Averaged Test Accurancy: 0.9109
+Averaged Test AUC: 0.8886
+Std Test Accurancy: 0.0919
+Std Test AUC: 0.0432
+------------------------- time cost ------------------------- 10.404255390167236
+
+-------------Round number: 266-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0674
+Averaged Test Accurancy: 0.9115
+Averaged Test AUC: 0.8874
+Std Test Accurancy: 0.0905
+Std Test AUC: 0.0431
+------------------------- time cost ------------------------- 10.246178388595581
+
+-------------Round number: 267-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0670
+Averaged Test Accurancy: 0.9120
+Averaged Test AUC: 0.8867
+Std Test Accurancy: 0.0911
+Std Test AUC: 0.0436
+------------------------- time cost ------------------------- 10.235002994537354
+
+-------------Round number: 268-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0660
+Averaged Test Accurancy: 0.9107
+Averaged Test AUC: 0.8873
+Std Test Accurancy: 0.0906
+Std Test AUC: 0.0433
+------------------------- time cost ------------------------- 10.357901573181152
+
+-------------Round number: 269-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0654
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.8858
+Std Test Accurancy: 0.0905
+Std Test AUC: 0.0440
+------------------------- time cost ------------------------- 10.285522937774658
+
+-------------Round number: 270-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0649
+Averaged Test Accurancy: 0.9113
+Averaged Test AUC: 0.8852
+Std Test Accurancy: 0.0898
+Std Test AUC: 0.0439
+------------------------- time cost ------------------------- 10.19732141494751
+
+-------------Round number: 271-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0641
+Averaged Test Accurancy: 0.9119
+Averaged Test AUC: 0.8852
+Std Test Accurancy: 0.0886
+Std Test AUC: 0.0438
+------------------------- time cost ------------------------- 10.224530458450317
+
+-------------Round number: 272-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0635
+Averaged Test Accurancy: 0.9110
+Averaged Test AUC: 0.8847
+Std Test Accurancy: 0.0893
+Std Test AUC: 0.0433
+------------------------- time cost ------------------------- 10.214441537857056
+
+-------------Round number: 273-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0635
+Averaged Test Accurancy: 0.9099
+Averaged Test AUC: 0.8842
+Std Test Accurancy: 0.0902
+Std Test AUC: 0.0436
+------------------------- time cost ------------------------- 10.28451681137085
+
+-------------Round number: 274-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0625
+Averaged Test Accurancy: 0.9100
+Averaged Test AUC: 0.8832
+Std Test Accurancy: 0.0896
+Std Test AUC: 0.0434
+------------------------- time cost ------------------------- 10.441054105758667
+
+-------------Round number: 275-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0623
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.8830
+Std Test Accurancy: 0.0896
+Std Test AUC: 0.0434
+------------------------- time cost ------------------------- 10.246651411056519
+
+-------------Round number: 276-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0612
+Averaged Test Accurancy: 0.9107
+Averaged Test AUC: 0.8833
+Std Test Accurancy: 0.0889
+Std Test AUC: 0.0436
+------------------------- time cost ------------------------- 10.663021564483643
+
+-------------Round number: 277-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0611
+Averaged Test Accurancy: 0.9116
+Averaged Test AUC: 0.8818
+Std Test Accurancy: 0.0902
+Std Test AUC: 0.0430
+------------------------- time cost ------------------------- 10.711293935775757
+
+-------------Round number: 278-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0600
+Averaged Test Accurancy: 0.9101
+Averaged Test AUC: 0.8804
+Std Test Accurancy: 0.0915
+Std Test AUC: 0.0438
+------------------------- time cost ------------------------- 10.940788507461548
+
+-------------Round number: 279-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0595
+Averaged Test Accurancy: 0.9106
+Averaged Test AUC: 0.8805
+Std Test Accurancy: 0.0896
+Std Test AUC: 0.0439
+------------------------- time cost ------------------------- 10.451278924942017
+
+-------------Round number: 280-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0589
+Averaged Test Accurancy: 0.9106
+Averaged Test AUC: 0.8804
+Std Test Accurancy: 0.0913
+Std Test AUC: 0.0451
+------------------------- time cost ------------------------- 10.353376388549805
+
+-------------Round number: 281-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0584
+Averaged Test Accurancy: 0.9095
+Averaged Test AUC: 0.8785
+Std Test Accurancy: 0.0906
+Std Test AUC: 0.0441
+------------------------- time cost ------------------------- 10.30231785774231
+
+-------------Round number: 282-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0575
+Averaged Test Accurancy: 0.9102
+Averaged Test AUC: 0.8789
+Std Test Accurancy: 0.0887
+Std Test AUC: 0.0443
+------------------------- time cost ------------------------- 10.252295732498169
+
+-------------Round number: 283-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0574
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.8781
+Std Test Accurancy: 0.0887
+Std Test AUC: 0.0445
+------------------------- time cost ------------------------- 10.176855325698853
+
+-------------Round number: 284-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0567
+Averaged Test Accurancy: 0.9112
+Averaged Test AUC: 0.8769
+Std Test Accurancy: 0.0902
+Std Test AUC: 0.0446
+------------------------- time cost ------------------------- 10.240932703018188
+
+-------------Round number: 285-------------
+
+Evaluate personalized models
+Averaged Train Loss: 0.0560
+Averaged Test Accurancy: 0.9114
+Averaged Test AUC: 0.8775
+Std Test Accurancy: 0.0907
+Std Test AUC: 0.0446
+------------------------- time cost ------------------------- 10.780356884002686
+
+Best accuracy.
+0.913295568143952
+
+Average time cost per round.
+10.370208049238773
+File path: ../results/Cifar10_FedAH_test_0.h5
+
+Average time cost: 2968.78s.
+Length:  286
+std for best accurancy: 0.0
+mean for best accurancy: 0.913295568143952
+All done!
+
+Storage on cuda:0
+-------------------------------------------------------------------------------
+Total Tensors: 72142716 	Used Memory: 208.26M
+The allocated memory on cuda:0: 225.13M
+Memory differs due to the matrix alignment or invisible gradient buffer tensors
+-------------------------------------------------------------------------------

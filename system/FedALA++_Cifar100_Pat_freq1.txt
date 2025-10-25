@@ -1,0 +1,3634 @@
+==================================================
+goal = test
+device = cuda
+device_id = 0
+dataset = Cifar100_pat
+num_classes = 100
+model = CNN
+batch_size = 10
+local_learning_rate = 0.005
+learning_rate_decay = False
+learning_rate_decay_gamma = 0.99
+global_rounds = 1000
+local_epochs = 1
+algorithm = FedALA++
+join_ratio = 1.0
+random_join_ratio = False
+num_clients = 20
+prev = 0
+times = 1
+eval_gap = 1
+save_folder_name = items
+auto_break = True
+dlg_eval = False
+dlg_gap = 100
+batch_num_per_client = 2
+num_new_clients = 0
+fine_tuning_epoch_new = 0
+feature_dim = 512
+vocab_size = 32000
+max_len = 200
+client_drop_rate = 0.0
+train_slow_rate = 0.0
+send_slow_rate = 0.0
+time_select = False
+time_threthold = 10000
+beta = 0.0
+lamda = 1.0
+mu = 0.0
+K = 5
+p_learning_rate = 0.01
+M = 5
+itk = 4000
+alphaK = 1.0
+sigma = 1.0
+alpha = 1.0
+plocal_epochs = 1
+tau = 1.0
+fine_tuning_epochs = 10
+dr_learning_rate = 0.0
+L = 1.0
+noise_dim = 512
+generator_learning_rate = 0.005
+hidden_dim = 512
+server_epochs = 1000
+localize_feature_extractor = False
+server_learning_rate = 1.0
+eta = 1.0
+rand_percent = 80
+layer_idx = 2
+mentee_learning_rate = 0.005
+T_start = 0.95
+T_end = 0.98
+momentum = 0.1
+kl_weight = 0.0
+ewc_lambda = 0.05
+buffer_size = 50
+grid_search = False
+==================================================
+Running with ewc_lambda=0.05, buffer_size=50
+
+============= Running time: 0th =============
+Creating server and clients ...
+FedAvgCNN(
+  (conv1): Sequential(
+    (0): Conv2d(3, 32, kernel_size=(5, 5), stride=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (conv2): Sequential(
+    (0): Conv2d(32, 64, kernel_size=(5, 5), stride=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc1): Sequential(
+    (0): Linear(in_features=1600, out_features=512, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (fc): Linear(in_features=512, out_features=100, bias=True)
+)
+Commons Config: {'common': None, 'parameter_tuning': False, 'algo_executing': 'FedALA'}
+
+Join ratio / total clients: 1.0 / 20
+Finished creating server and clients.
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+I am inside FedALA++ with Uncertainty-Based Sampling ...........
+
+-------------In FedALA++ Round number: 0-------------
+
+Evaluate global model
+Averaged Train Loss: 4.6064
+Averaged Test Accurancy: 0.0114
+Averaged Test AUC: 0.4976
+Std Test Accurancy: 0.0243
+Std Test AUC: 0.0844
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.660925149917603
+Client: 0 	Std: 0.08319569182052652 	ALA epochs: 15
+Client: 1 	Std: 0.09233547535222719 	ALA epochs: 11
+Client: 2 	Std: 0.08197240167102574 	ALA epochs: 14
+Client: 3 	Std: 0.07366163208225629 	ALA epochs: 11
+Client: 4 	Std: 0.09113132592489692 	ALA epochs: 14
+Client: 5 	Std: 0.07279145147845485 	ALA epochs: 12
+Client: 6 	Std: 0.08867590677824798 	ALA epochs: 14
+Client: 7 	Std: 0.08477519144015935 	ALA epochs: 11
+Client: 8 	Std: 0.09529320319966444 	ALA epochs: 12
+Client: 9 	Std: 0.07046364618677241 	ALA epochs: 12
+Client: 10 	Std: 0.08889724991888101 	ALA epochs: 15
+Client: 11 	Std: 0.07155271808481468 	ALA epochs: 11
+Client: 12 	Std: 0.07314525771281642 	ALA epochs: 13
+Client: 13 	Std: 0.09034254995410851 	ALA epochs: 12
+Client: 14 	Std: 0.09437163646659774 	ALA epochs: 14
+Client: 15 	Std: 0.08215989945574359 	ALA epochs: 11
+Client: 16 	Std: 0.09723245054638537 	ALA epochs: 13
+Client: 17 	Std: 0.08305906580706988 	ALA epochs: 12
+Client: 18 	Std: 0.08906473880214828 	ALA epochs: 14
+Client: 19 	Std: 0.0734299699244332 	ALA epochs: 12
+
+-------------In FedALA++ Round number: 1-------------
+
+Evaluate global model
+Averaged Train Loss: 3.0022
+Averaged Test Accurancy: 0.2071
+Averaged Test AUC: 0.9619
+Std Test Accurancy: 0.0477
+Std Test AUC: 0.0225
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 30.106714963912964
+
+-------------In FedALA++ Round number: 2-------------
+
+Evaluate global model
+Averaged Train Loss: 2.3209
+Averaged Test Accurancy: 0.3152
+Averaged Test AUC: 0.9688
+Std Test Accurancy: 0.0563
+Std Test AUC: 0.0069
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.752468347549438
+
+-------------In FedALA++ Round number: 3-------------
+
+Evaluate global model
+Averaged Train Loss: 2.1008
+Averaged Test Accurancy: 0.3638
+Averaged Test AUC: 0.9716
+Std Test Accurancy: 0.0570
+Std Test AUC: 0.0045
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.766749382019043
+
+-------------In FedALA++ Round number: 4-------------
+
+Evaluate global model
+Averaged Train Loss: 1.9748
+Averaged Test Accurancy: 0.3863
+Averaged Test AUC: 0.9731
+Std Test Accurancy: 0.0471
+Std Test AUC: 0.0042
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.488057136535645
+
+-------------In FedALA++ Round number: 5-------------
+
+Evaluate global model
+Averaged Train Loss: 1.8810
+Averaged Test Accurancy: 0.4133
+Averaged Test AUC: 0.9744
+Std Test Accurancy: 0.0471
+Std Test AUC: 0.0040
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.631382465362549
+
+-------------In FedALA++ Round number: 6-------------
+
+Evaluate global model
+Averaged Train Loss: 1.8034
+Averaged Test Accurancy: 0.4378
+Averaged Test AUC: 0.9751
+Std Test Accurancy: 0.0495
+Std Test AUC: 0.0041
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.521363496780396
+
+-------------In FedALA++ Round number: 7-------------
+
+Evaluate global model
+Averaged Train Loss: 1.7296
+Averaged Test Accurancy: 0.4583
+Averaged Test AUC: 0.9758
+Std Test Accurancy: 0.0488
+Std Test AUC: 0.0044
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.85092568397522
+
+-------------In FedALA++ Round number: 8-------------
+
+Evaluate global model
+Averaged Train Loss: 1.6773
+Averaged Test Accurancy: 0.4756
+Averaged Test AUC: 0.9758
+Std Test Accurancy: 0.0474
+Std Test AUC: 0.0052
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.473814725875854
+
+-------------In FedALA++ Round number: 9-------------
+
+Evaluate global model
+Averaged Train Loss: 1.6348
+Averaged Test Accurancy: 0.4922
+Averaged Test AUC: 0.9756
+Std Test Accurancy: 0.0516
+Std Test AUC: 0.0060
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.141469717025757
+
+-------------In FedALA++ Round number: 10-------------
+
+Evaluate global model
+Averaged Train Loss: 1.5791
+Averaged Test Accurancy: 0.5114
+Averaged Test AUC: 0.9750
+Std Test Accurancy: 0.0504
+Std Test AUC: 0.0064
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.223085880279541
+
+-------------In FedALA++ Round number: 11-------------
+
+Evaluate global model
+Averaged Train Loss: 1.5361
+Averaged Test Accurancy: 0.5268
+Averaged Test AUC: 0.9737
+Std Test Accurancy: 0.0457
+Std Test AUC: 0.0073
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.191545009613037
+
+-------------In FedALA++ Round number: 12-------------
+
+Evaluate global model
+Averaged Train Loss: 1.5000
+Averaged Test Accurancy: 0.5399
+Averaged Test AUC: 0.9720
+Std Test Accurancy: 0.0444
+Std Test AUC: 0.0087
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.63818120956421
+
+-------------In FedALA++ Round number: 13-------------
+
+Evaluate global model
+Averaged Train Loss: 1.4467
+Averaged Test Accurancy: 0.5535
+Averaged Test AUC: 0.9712
+Std Test Accurancy: 0.0461
+Std Test AUC: 0.0090
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.090248346328735
+
+-------------In FedALA++ Round number: 14-------------
+
+Evaluate global model
+Averaged Train Loss: 1.4232
+Averaged Test Accurancy: 0.5633
+Averaged Test AUC: 0.9706
+Std Test Accurancy: 0.0442
+Std Test AUC: 0.0093
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.670780658721924
+
+-------------In FedALA++ Round number: 15-------------
+
+Evaluate global model
+Averaged Train Loss: 1.3906
+Averaged Test Accurancy: 0.5710
+Averaged Test AUC: 0.9689
+Std Test Accurancy: 0.0432
+Std Test AUC: 0.0097
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.057237148284912
+
+-------------In FedALA++ Round number: 16-------------
+
+Evaluate global model
+Averaged Train Loss: 1.3674
+Averaged Test Accurancy: 0.5789
+Averaged Test AUC: 0.9674
+Std Test Accurancy: 0.0442
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.61129355430603
+
+-------------In FedALA++ Round number: 17-------------
+
+Evaluate global model
+Averaged Train Loss: 1.3254
+Averaged Test Accurancy: 0.5826
+Averaged Test AUC: 0.9678
+Std Test Accurancy: 0.0451
+Std Test AUC: 0.0096
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.595921039581299
+
+-------------In FedALA++ Round number: 18-------------
+
+Evaluate global model
+Averaged Train Loss: 1.3199
+Averaged Test Accurancy: 0.5923
+Averaged Test AUC: 0.9651
+Std Test Accurancy: 0.0451
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.057923793792725
+
+-------------In FedALA++ Round number: 19-------------
+
+Evaluate global model
+Averaged Train Loss: 1.2760
+Averaged Test Accurancy: 0.5977
+Averaged Test AUC: 0.9654
+Std Test Accurancy: 0.0442
+Std Test AUC: 0.0099
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.903699159622192
+
+-------------In FedALA++ Round number: 20-------------
+
+Evaluate global model
+Averaged Train Loss: 1.2461
+Averaged Test Accurancy: 0.6017
+Averaged Test AUC: 0.9656
+Std Test Accurancy: 0.0446
+Std Test AUC: 0.0100
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.41429328918457
+
+-------------In FedALA++ Round number: 21-------------
+
+Evaluate global model
+Averaged Train Loss: 1.2421
+Averaged Test Accurancy: 0.6047
+Averaged Test AUC: 0.9641
+Std Test Accurancy: 0.0415
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.560246706008911
+
+-------------In FedALA++ Round number: 22-------------
+
+Evaluate global model
+Averaged Train Loss: 1.2137
+Averaged Test Accurancy: 0.6096
+Averaged Test AUC: 0.9643
+Std Test Accurancy: 0.0382
+Std Test AUC: 0.0098
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.757612228393555
+
+-------------In FedALA++ Round number: 23-------------
+
+Evaluate global model
+Averaged Train Loss: 1.1869
+Averaged Test Accurancy: 0.6145
+Averaged Test AUC: 0.9632
+Std Test Accurancy: 0.0427
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.015073537826538
+
+-------------In FedALA++ Round number: 24-------------
+
+Evaluate global model
+Averaged Train Loss: 1.1752
+Averaged Test Accurancy: 0.6186
+Averaged Test AUC: 0.9622
+Std Test Accurancy: 0.0396
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.64595937728882
+
+-------------In FedALA++ Round number: 25-------------
+
+Evaluate global model
+Averaged Train Loss: 1.1555
+Averaged Test Accurancy: 0.6227
+Averaged Test AUC: 0.9613
+Std Test Accurancy: 0.0401
+Std Test AUC: 0.0102
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.120999574661255
+
+-------------In FedALA++ Round number: 26-------------
+
+Evaluate global model
+Averaged Train Loss: 1.1484
+Averaged Test Accurancy: 0.6249
+Averaged Test AUC: 0.9594
+Std Test Accurancy: 0.0413
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.659395933151245
+
+-------------In FedALA++ Round number: 27-------------
+
+Evaluate global model
+Averaged Train Loss: 1.1191
+Averaged Test Accurancy: 0.6322
+Averaged Test AUC: 0.9597
+Std Test Accurancy: 0.0405
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.961243152618408
+
+-------------In FedALA++ Round number: 28-------------
+
+Evaluate global model
+Averaged Train Loss: 1.1015
+Averaged Test Accurancy: 0.6339
+Averaged Test AUC: 0.9593
+Std Test Accurancy: 0.0376
+Std Test AUC: 0.0101
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.863852500915527
+
+-------------In FedALA++ Round number: 29-------------
+
+Evaluate global model
+Averaged Train Loss: 1.0889
+Averaged Test Accurancy: 0.6378
+Averaged Test AUC: 0.9572
+Std Test Accurancy: 0.0413
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.237786054611206
+
+-------------In FedALA++ Round number: 30-------------
+
+Evaluate global model
+Averaged Train Loss: 1.0756
+Averaged Test Accurancy: 0.6439
+Averaged Test AUC: 0.9560
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.946950197219849
+
+-------------In FedALA++ Round number: 31-------------
+
+Evaluate global model
+Averaged Train Loss: 1.0583
+Averaged Test Accurancy: 0.6425
+Averaged Test AUC: 0.9534
+Std Test Accurancy: 0.0397
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.885146617889404
+
+-------------In FedALA++ Round number: 32-------------
+
+Evaluate global model
+Averaged Train Loss: 1.0344
+Averaged Test Accurancy: 0.6446
+Averaged Test AUC: 0.9529
+Std Test Accurancy: 0.0391
+Std Test AUC: 0.0102
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.54241108894348
+
+-------------In FedALA++ Round number: 33-------------
+
+Evaluate global model
+Averaged Train Loss: 1.0271
+Averaged Test Accurancy: 0.6509
+Averaged Test AUC: 0.9516
+Std Test Accurancy: 0.0380
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.122070550918579
+
+-------------In FedALA++ Round number: 34-------------
+
+Evaluate global model
+Averaged Train Loss: 1.0158
+Averaged Test Accurancy: 0.6486
+Averaged Test AUC: 0.9503
+Std Test Accurancy: 0.0391
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.77148413658142
+
+-------------In FedALA++ Round number: 35-------------
+
+Evaluate global model
+Averaged Train Loss: 0.9976
+Averaged Test Accurancy: 0.6530
+Averaged Test AUC: 0.9481
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.824831247329712
+
+-------------In FedALA++ Round number: 36-------------
+
+Evaluate global model
+Averaged Train Loss: 0.9748
+Averaged Test Accurancy: 0.6546
+Averaged Test AUC: 0.9493
+Std Test Accurancy: 0.0403
+Std Test AUC: 0.0099
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.162477731704712
+
+-------------In FedALA++ Round number: 37-------------
+
+Evaluate global model
+Averaged Train Loss: 0.9763
+Averaged Test Accurancy: 0.6552
+Averaged Test AUC: 0.9456
+Std Test Accurancy: 0.0401
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.8119375705719
+
+-------------In FedALA++ Round number: 38-------------
+
+Evaluate global model
+Averaged Train Loss: 0.9455
+Averaged Test Accurancy: 0.6584
+Averaged Test AUC: 0.9459
+Std Test Accurancy: 0.0391
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.799485683441162
+
+-------------In FedALA++ Round number: 39-------------
+
+Evaluate global model
+Averaged Train Loss: 0.9467
+Averaged Test Accurancy: 0.6576
+Averaged Test AUC: 0.9412
+Std Test Accurancy: 0.0355
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.929558753967285
+
+-------------In FedALA++ Round number: 40-------------
+
+Evaluate global model
+Averaged Train Loss: 0.9299
+Averaged Test Accurancy: 0.6603
+Averaged Test AUC: 0.9389
+Std Test Accurancy: 0.0365
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.657849550247192
+
+-------------In FedALA++ Round number: 41-------------
+
+Evaluate global model
+Averaged Train Loss: 0.9268
+Averaged Test Accurancy: 0.6588
+Averaged Test AUC: 0.9375
+Std Test Accurancy: 0.0355
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.177452087402344
+
+-------------In FedALA++ Round number: 42-------------
+
+Evaluate global model
+Averaged Train Loss: 0.9016
+Averaged Test Accurancy: 0.6610
+Averaged Test AUC: 0.9355
+Std Test Accurancy: 0.0365
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.49098014831543
+
+-------------In FedALA++ Round number: 43-------------
+
+Evaluate global model
+Averaged Train Loss: 0.8905
+Averaged Test Accurancy: 0.6597
+Averaged Test AUC: 0.9344
+Std Test Accurancy: 0.0379
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.108816146850586
+
+-------------In FedALA++ Round number: 44-------------
+
+Evaluate global model
+Averaged Train Loss: 0.8890
+Averaged Test Accurancy: 0.6626
+Averaged Test AUC: 0.9290
+Std Test Accurancy: 0.0381
+Std Test AUC: 0.0126
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.25455141067505
+
+-------------In FedALA++ Round number: 45-------------
+
+Evaluate global model
+Averaged Train Loss: 0.8641
+Averaged Test Accurancy: 0.6622
+Averaged Test AUC: 0.9301
+Std Test Accurancy: 0.0362
+Std Test AUC: 0.0122
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.576605558395386
+
+-------------In FedALA++ Round number: 46-------------
+
+Evaluate global model
+Averaged Train Loss: 0.8562
+Averaged Test Accurancy: 0.6614
+Averaged Test AUC: 0.9266
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0126
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.552916049957275
+
+-------------In FedALA++ Round number: 47-------------
+
+Evaluate global model
+Averaged Train Loss: 0.8376
+Averaged Test Accurancy: 0.6646
+Averaged Test AUC: 0.9239
+Std Test Accurancy: 0.0347
+Std Test AUC: 0.0128
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 10.876214742660522
+
+-------------In FedALA++ Round number: 48-------------
+
+Evaluate global model
+Averaged Train Loss: 0.8344
+Averaged Test Accurancy: 0.6655
+Averaged Test AUC: 0.9211
+Std Test Accurancy: 0.0348
+Std Test AUC: 0.0126
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.615751504898071
+
+-------------In FedALA++ Round number: 49-------------
+
+Evaluate global model
+Averaged Train Loss: 0.8099
+Averaged Test Accurancy: 0.6676
+Averaged Test AUC: 0.9203
+Std Test Accurancy: 0.0362
+Std Test AUC: 0.0123
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.488420724868774
+
+-------------In FedALA++ Round number: 50-------------
+
+Evaluate global model
+Averaged Train Loss: 0.8092
+Averaged Test Accurancy: 0.6670
+Averaged Test AUC: 0.9158
+Std Test Accurancy: 0.0375
+Std Test AUC: 0.0132
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.163517951965332
+
+-------------In FedALA++ Round number: 51-------------
+
+Evaluate global model
+Averaged Train Loss: 0.7783
+Averaged Test Accurancy: 0.6674
+Averaged Test AUC: 0.9167
+Std Test Accurancy: 0.0350
+Std Test AUC: 0.0126
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.993957996368408
+
+-------------In FedALA++ Round number: 52-------------
+
+Evaluate global model
+Averaged Train Loss: 0.7779
+Averaged Test Accurancy: 0.6668
+Averaged Test AUC: 0.9129
+Std Test Accurancy: 0.0359
+Std Test AUC: 0.0130
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.649178981781006
+
+-------------In FedALA++ Round number: 53-------------
+
+Evaluate global model
+Averaged Train Loss: 0.7762
+Averaged Test Accurancy: 0.6675
+Averaged Test AUC: 0.9081
+Std Test Accurancy: 0.0355
+Std Test AUC: 0.0137
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.584213018417358
+
+-------------In FedALA++ Round number: 54-------------
+
+Evaluate global model
+Averaged Train Loss: 0.7573
+Averaged Test Accurancy: 0.6678
+Averaged Test AUC: 0.9047
+Std Test Accurancy: 0.0334
+Std Test AUC: 0.0131
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.939794540405273
+
+-------------In FedALA++ Round number: 55-------------
+
+Evaluate global model
+Averaged Train Loss: 0.7465
+Averaged Test Accurancy: 0.6691
+Averaged Test AUC: 0.9026
+Std Test Accurancy: 0.0362
+Std Test AUC: 0.0126
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.597331285476685
+
+-------------In FedALA++ Round number: 56-------------
+
+Evaluate global model
+Averaged Train Loss: 0.7226
+Averaged Test Accurancy: 0.6694
+Averaged Test AUC: 0.9020
+Std Test Accurancy: 0.0360
+Std Test AUC: 0.0122
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.642144203186035
+
+-------------In FedALA++ Round number: 57-------------
+
+Evaluate global model
+Averaged Train Loss: 0.7087
+Averaged Test Accurancy: 0.6709
+Averaged Test AUC: 0.9017
+Std Test Accurancy: 0.0364
+Std Test AUC: 0.0123
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.462190866470337
+
+-------------In FedALA++ Round number: 58-------------
+
+Evaluate global model
+Averaged Train Loss: 0.6941
+Averaged Test Accurancy: 0.6684
+Averaged Test AUC: 0.8992
+Std Test Accurancy: 0.0328
+Std Test AUC: 0.0124
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.456997632980347
+
+-------------In FedALA++ Round number: 59-------------
+
+Evaluate global model
+Averaged Train Loss: 0.6811
+Averaged Test Accurancy: 0.6700
+Averaged Test AUC: 0.8971
+Std Test Accurancy: 0.0367
+Std Test AUC: 0.0128
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.809264659881592
+
+-------------In FedALA++ Round number: 60-------------
+
+Evaluate global model
+Averaged Train Loss: 0.6729
+Averaged Test Accurancy: 0.6694
+Averaged Test AUC: 0.8908
+Std Test Accurancy: 0.0341
+Std Test AUC: 0.0129
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.387545347213745
+
+-------------In FedALA++ Round number: 61-------------
+
+Evaluate global model
+Averaged Train Loss: 0.6573
+Averaged Test Accurancy: 0.6715
+Averaged Test AUC: 0.8924
+Std Test Accurancy: 0.0361
+Std Test AUC: 0.0127
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.333393812179565
+
+-------------In FedALA++ Round number: 62-------------
+
+Evaluate global model
+Averaged Train Loss: 0.6378
+Averaged Test Accurancy: 0.6700
+Averaged Test AUC: 0.8910
+Std Test Accurancy: 0.0342
+Std Test AUC: 0.0136
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.13596487045288
+
+-------------In FedALA++ Round number: 63-------------
+
+Evaluate global model
+Averaged Train Loss: 0.6344
+Averaged Test Accurancy: 0.6692
+Averaged Test AUC: 0.8873
+Std Test Accurancy: 0.0316
+Std Test AUC: 0.0132
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.089227199554443
+
+-------------In FedALA++ Round number: 64-------------
+
+Evaluate global model
+Averaged Train Loss: 0.6215
+Averaged Test Accurancy: 0.6695
+Averaged Test AUC: 0.8850
+Std Test Accurancy: 0.0348
+Std Test AUC: 0.0134
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.128202438354492
+
+-------------In FedALA++ Round number: 65-------------
+
+Evaluate global model
+Averaged Train Loss: 0.6046
+Averaged Test Accurancy: 0.6706
+Averaged Test AUC: 0.8835
+Std Test Accurancy: 0.0348
+Std Test AUC: 0.0129
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.75702452659607
+
+-------------In FedALA++ Round number: 66-------------
+
+Evaluate global model
+Averaged Train Loss: 0.5901
+Averaged Test Accurancy: 0.6704
+Averaged Test AUC: 0.8805
+Std Test Accurancy: 0.0329
+Std Test AUC: 0.0127
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.597047328948975
+
+-------------In FedALA++ Round number: 67-------------
+
+Evaluate global model
+Averaged Train Loss: 0.5734
+Averaged Test Accurancy: 0.6700
+Averaged Test AUC: 0.8798
+Std Test Accurancy: 0.0326
+Std Test AUC: 0.0129
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.910923957824707
+
+-------------In FedALA++ Round number: 68-------------
+
+Evaluate global model
+Averaged Train Loss: 0.5641
+Averaged Test Accurancy: 0.6693
+Averaged Test AUC: 0.8772
+Std Test Accurancy: 0.0351
+Std Test AUC: 0.0127
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.43704581260681
+
+-------------In FedALA++ Round number: 69-------------
+
+Evaluate global model
+Averaged Train Loss: 0.5448
+Averaged Test Accurancy: 0.6709
+Averaged Test AUC: 0.8770
+Std Test Accurancy: 0.0341
+Std Test AUC: 0.0126
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.239938735961914
+
+-------------In FedALA++ Round number: 70-------------
+
+Evaluate global model
+Averaged Train Loss: 0.5408
+Averaged Test Accurancy: 0.6712
+Averaged Test AUC: 0.8732
+Std Test Accurancy: 0.0342
+Std Test AUC: 0.0131
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.126733779907227
+
+-------------In FedALA++ Round number: 71-------------
+
+Evaluate global model
+Averaged Train Loss: 0.5233
+Averaged Test Accurancy: 0.6715
+Averaged Test AUC: 0.8731
+Std Test Accurancy: 0.0330
+Std Test AUC: 0.0127
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.744478702545166
+
+-------------In FedALA++ Round number: 72-------------
+
+Evaluate global model
+Averaged Train Loss: 0.5143
+Averaged Test Accurancy: 0.6694
+Averaged Test AUC: 0.8677
+Std Test Accurancy: 0.0347
+Std Test AUC: 0.0128
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 16.871569633483887
+
+-------------In FedALA++ Round number: 73-------------
+
+Evaluate global model
+Averaged Train Loss: 0.5000
+Averaged Test Accurancy: 0.6724
+Averaged Test AUC: 0.8686
+Std Test Accurancy: 0.0366
+Std Test AUC: 0.0124
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.45920443534851
+
+-------------In FedALA++ Round number: 74-------------
+
+Evaluate global model
+Averaged Train Loss: 0.4847
+Averaged Test Accurancy: 0.6716
+Averaged Test AUC: 0.8652
+Std Test Accurancy: 0.0340
+Std Test AUC: 0.0120
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 16.39348840713501
+
+-------------In FedALA++ Round number: 75-------------
+
+Evaluate global model
+Averaged Train Loss: 0.4795
+Averaged Test Accurancy: 0.6713
+Averaged Test AUC: 0.8612
+Std Test Accurancy: 0.0332
+Std Test AUC: 0.0124
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.414045810699463
+
+-------------In FedALA++ Round number: 76-------------
+
+Evaluate global model
+Averaged Train Loss: 0.4743
+Averaged Test Accurancy: 0.6699
+Averaged Test AUC: 0.8596
+Std Test Accurancy: 0.0347
+Std Test AUC: 0.0124
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 16.163472414016724
+
+-------------In FedALA++ Round number: 77-------------
+
+Evaluate global model
+Averaged Train Loss: 0.4568
+Averaged Test Accurancy: 0.6716
+Averaged Test AUC: 0.8589
+Std Test Accurancy: 0.0339
+Std Test AUC: 0.0121
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.02488088607788
+
+-------------In FedALA++ Round number: 78-------------
+
+Evaluate global model
+Averaged Train Loss: 0.4459
+Averaged Test Accurancy: 0.6682
+Averaged Test AUC: 0.8570
+Std Test Accurancy: 0.0333
+Std Test AUC: 0.0120
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.650473833084106
+
+-------------In FedALA++ Round number: 79-------------
+
+Evaluate global model
+Averaged Train Loss: 0.4316
+Averaged Test Accurancy: 0.6696
+Averaged Test AUC: 0.8572
+Std Test Accurancy: 0.0318
+Std Test AUC: 0.0113
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.11788010597229
+
+-------------In FedALA++ Round number: 80-------------
+
+Evaluate global model
+Averaged Train Loss: 0.4124
+Averaged Test Accurancy: 0.6718
+Averaged Test AUC: 0.8588
+Std Test Accurancy: 0.0325
+Std Test AUC: 0.0113
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.51742649078369
+
+-------------In FedALA++ Round number: 81-------------
+
+Evaluate global model
+Averaged Train Loss: 0.4070
+Averaged Test Accurancy: 0.6705
+Averaged Test AUC: 0.8543
+Std Test Accurancy: 0.0329
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.132084131240845
+
+-------------In FedALA++ Round number: 82-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3921
+Averaged Test Accurancy: 0.6713
+Averaged Test AUC: 0.8539
+Std Test Accurancy: 0.0329
+Std Test AUC: 0.0120
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.65615177154541
+
+-------------In FedALA++ Round number: 83-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3836
+Averaged Test Accurancy: 0.6728
+Averaged Test AUC: 0.8472
+Std Test Accurancy: 0.0348
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.372048377990723
+
+-------------In FedALA++ Round number: 84-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3647
+Averaged Test Accurancy: 0.6726
+Averaged Test AUC: 0.8514
+Std Test Accurancy: 0.0355
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.180282354354858
+
+-------------In FedALA++ Round number: 85-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3616
+Averaged Test Accurancy: 0.6706
+Averaged Test AUC: 0.8461
+Std Test Accurancy: 0.0313
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.011180877685547
+
+-------------In FedALA++ Round number: 86-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3603
+Averaged Test Accurancy: 0.6660
+Averaged Test AUC: 0.8416
+Std Test Accurancy: 0.0328
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.23350238800049
+
+-------------In FedALA++ Round number: 87-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3426
+Averaged Test Accurancy: 0.6673
+Averaged Test AUC: 0.8419
+Std Test Accurancy: 0.0307
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.713066816329956
+
+-------------In FedALA++ Round number: 88-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3428
+Averaged Test Accurancy: 0.6660
+Averaged Test AUC: 0.8375
+Std Test Accurancy: 0.0324
+Std Test AUC: 0.0112
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.083127975463867
+
+-------------In FedALA++ Round number: 89-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3180
+Averaged Test Accurancy: 0.6666
+Averaged Test AUC: 0.8436
+Std Test Accurancy: 0.0327
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.80996298789978
+
+-------------In FedALA++ Round number: 90-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3212
+Averaged Test Accurancy: 0.6648
+Averaged Test AUC: 0.8332
+Std Test Accurancy: 0.0325
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.69874119758606
+
+-------------In FedALA++ Round number: 91-------------
+
+Evaluate global model
+Averaged Train Loss: 0.3058
+Averaged Test Accurancy: 0.6647
+Averaged Test AUC: 0.8352
+Std Test Accurancy: 0.0333
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.872802495956421
+
+-------------In FedALA++ Round number: 92-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2906
+Averaged Test Accurancy: 0.6650
+Averaged Test AUC: 0.8361
+Std Test Accurancy: 0.0348
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 16.94916582107544
+
+-------------In FedALA++ Round number: 93-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2878
+Averaged Test Accurancy: 0.6629
+Averaged Test AUC: 0.8338
+Std Test Accurancy: 0.0355
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.531259536743164
+
+-------------In FedALA++ Round number: 94-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2795
+Averaged Test Accurancy: 0.6627
+Averaged Test AUC: 0.8300
+Std Test Accurancy: 0.0360
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.773170471191406
+
+-------------In FedALA++ Round number: 95-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2696
+Averaged Test Accurancy: 0.6640
+Averaged Test AUC: 0.8295
+Std Test Accurancy: 0.0344
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.150240182876587
+
+-------------In FedALA++ Round number: 96-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2553
+Averaged Test Accurancy: 0.6637
+Averaged Test AUC: 0.8301
+Std Test Accurancy: 0.0369
+Std Test AUC: 0.0100
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.347039222717285
+
+-------------In FedALA++ Round number: 97-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2476
+Averaged Test Accurancy: 0.6618
+Averaged Test AUC: 0.8275
+Std Test Accurancy: 0.0341
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.135024070739746
+
+-------------In FedALA++ Round number: 98-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2488
+Averaged Test Accurancy: 0.6598
+Averaged Test AUC: 0.8233
+Std Test Accurancy: 0.0343
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.887723207473755
+
+-------------In FedALA++ Round number: 99-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2350
+Averaged Test Accurancy: 0.6597
+Averaged Test AUC: 0.8257
+Std Test Accurancy: 0.0354
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.78358268737793
+
+-------------In FedALA++ Round number: 100-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2257
+Averaged Test Accurancy: 0.6607
+Averaged Test AUC: 0.8246
+Std Test Accurancy: 0.0374
+Std Test AUC: 0.0102
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.81462001800537
+
+-------------In FedALA++ Round number: 101-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2172
+Averaged Test Accurancy: 0.6646
+Averaged Test AUC: 0.8237
+Std Test Accurancy: 0.0379
+Std Test AUC: 0.0101
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.089824438095093
+
+-------------In FedALA++ Round number: 102-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2088
+Averaged Test Accurancy: 0.6628
+Averaged Test AUC: 0.8245
+Std Test Accurancy: 0.0377
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.120817184448242
+
+-------------In FedALA++ Round number: 103-------------
+
+Evaluate global model
+Averaged Train Loss: 0.2119
+Averaged Test Accurancy: 0.6595
+Averaged Test AUC: 0.8162
+Std Test Accurancy: 0.0367
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.867344379425049
+
+-------------In FedALA++ Round number: 104-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1964
+Averaged Test Accurancy: 0.6612
+Averaged Test AUC: 0.8165
+Std Test Accurancy: 0.0362
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.346211194992065
+
+-------------In FedALA++ Round number: 105-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1957
+Averaged Test Accurancy: 0.6596
+Averaged Test AUC: 0.8129
+Std Test Accurancy: 0.0356
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.9725341796875
+
+-------------In FedALA++ Round number: 106-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1800
+Averaged Test Accurancy: 0.6624
+Averaged Test AUC: 0.8161
+Std Test Accurancy: 0.0357
+Std Test AUC: 0.0102
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.694766998291016
+
+-------------In FedALA++ Round number: 107-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1783
+Averaged Test Accurancy: 0.6592
+Averaged Test AUC: 0.8165
+Std Test Accurancy: 0.0354
+Std Test AUC: 0.0102
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.983664274215698
+
+-------------In FedALA++ Round number: 108-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1667
+Averaged Test Accurancy: 0.6628
+Averaged Test AUC: 0.8160
+Std Test Accurancy: 0.0378
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.72441291809082
+
+-------------In FedALA++ Round number: 109-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1669
+Averaged Test Accurancy: 0.6599
+Averaged Test AUC: 0.8122
+Std Test Accurancy: 0.0372
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.177093505859375
+
+-------------In FedALA++ Round number: 110-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1603
+Averaged Test Accurancy: 0.6598
+Averaged Test AUC: 0.8117
+Std Test Accurancy: 0.0354
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.68563199043274
+
+-------------In FedALA++ Round number: 111-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1598
+Averaged Test Accurancy: 0.6552
+Averaged Test AUC: 0.8085
+Std Test Accurancy: 0.0364
+Std Test AUC: 0.0098
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.214330196380615
+
+-------------In FedALA++ Round number: 112-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1451
+Averaged Test Accurancy: 0.6602
+Averaged Test AUC: 0.8093
+Std Test Accurancy: 0.0367
+Std Test AUC: 0.0093
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.801373720169067
+
+-------------In FedALA++ Round number: 113-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1445
+Averaged Test Accurancy: 0.6586
+Averaged Test AUC: 0.8121
+Std Test Accurancy: 0.0361
+Std Test AUC: 0.0096
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.182659387588501
+
+-------------In FedALA++ Round number: 114-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1441
+Averaged Test Accurancy: 0.6575
+Averaged Test AUC: 0.8084
+Std Test Accurancy: 0.0380
+Std Test AUC: 0.0097
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.5465829372406
+
+-------------In FedALA++ Round number: 115-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1294
+Averaged Test Accurancy: 0.6590
+Averaged Test AUC: 0.8079
+Std Test Accurancy: 0.0377
+Std Test AUC: 0.0099
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.158146142959595
+
+-------------In FedALA++ Round number: 116-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1317
+Averaged Test Accurancy: 0.6582
+Averaged Test AUC: 0.8068
+Std Test Accurancy: 0.0377
+Std Test AUC: 0.0100
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.38452172279358
+
+-------------In FedALA++ Round number: 117-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1190
+Averaged Test Accurancy: 0.6602
+Averaged Test AUC: 0.8087
+Std Test Accurancy: 0.0377
+Std Test AUC: 0.0098
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.011590719223022
+
+-------------In FedALA++ Round number: 118-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1171
+Averaged Test Accurancy: 0.6593
+Averaged Test AUC: 0.8047
+Std Test Accurancy: 0.0361
+Std Test AUC: 0.0100
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.76833176612854
+
+-------------In FedALA++ Round number: 119-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1177
+Averaged Test Accurancy: 0.6580
+Averaged Test AUC: 0.8038
+Std Test Accurancy: 0.0389
+Std Test AUC: 0.0094
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.065275430679321
+
+-------------In FedALA++ Round number: 120-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1118
+Averaged Test Accurancy: 0.6581
+Averaged Test AUC: 0.8001
+Std Test Accurancy: 0.0371
+Std Test AUC: 0.0099
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.419843673706055
+
+-------------In FedALA++ Round number: 121-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1080
+Averaged Test Accurancy: 0.6586
+Averaged Test AUC: 0.7995
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.505618810653687
+
+-------------In FedALA++ Round number: 122-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0988
+Averaged Test Accurancy: 0.6587
+Averaged Test AUC: 0.8018
+Std Test Accurancy: 0.0386
+Std Test AUC: 0.0092
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.03959012031555
+
+-------------In FedALA++ Round number: 123-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1045
+Averaged Test Accurancy: 0.6558
+Averaged Test AUC: 0.7990
+Std Test Accurancy: 0.0391
+Std Test AUC: 0.0083
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.994433879852295
+
+-------------In FedALA++ Round number: 124-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0952
+Averaged Test Accurancy: 0.6583
+Averaged Test AUC: 0.8000
+Std Test Accurancy: 0.0369
+Std Test AUC: 0.0096
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.542154550552368
+
+-------------In FedALA++ Round number: 125-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0918
+Averaged Test Accurancy: 0.6572
+Averaged Test AUC: 0.7973
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0087
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.617255687713623
+
+-------------In FedALA++ Round number: 126-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0850
+Averaged Test Accurancy: 0.6581
+Averaged Test AUC: 0.7965
+Std Test Accurancy: 0.0393
+Std Test AUC: 0.0098
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.609918117523193
+
+-------------In FedALA++ Round number: 127-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0872
+Averaged Test Accurancy: 0.6576
+Averaged Test AUC: 0.7960
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0091
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.96305537223816
+
+-------------In FedALA++ Round number: 128-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1180
+Averaged Test Accurancy: 0.6540
+Averaged Test AUC: 0.7924
+Std Test Accurancy: 0.0374
+Std Test AUC: 0.0129
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.71591305732727
+
+-------------In FedALA++ Round number: 129-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0876
+Averaged Test Accurancy: 0.6588
+Averaged Test AUC: 0.7986
+Std Test Accurancy: 0.0406
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.054781913757324
+
+-------------In FedALA++ Round number: 130-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0802
+Averaged Test Accurancy: 0.6596
+Averaged Test AUC: 0.7973
+Std Test Accurancy: 0.0393
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.180974006652832
+
+-------------In FedALA++ Round number: 131-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1000
+Averaged Test Accurancy: 0.6516
+Averaged Test AUC: 0.7971
+Std Test Accurancy: 0.0383
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.93360161781311
+
+-------------In FedALA++ Round number: 132-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0724
+Averaged Test Accurancy: 0.6604
+Averaged Test AUC: 0.7990
+Std Test Accurancy: 0.0387
+Std Test AUC: 0.0091
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.638206005096436
+
+-------------In FedALA++ Round number: 133-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0749
+Averaged Test Accurancy: 0.6596
+Averaged Test AUC: 0.7984
+Std Test Accurancy: 0.0396
+Std Test AUC: 0.0096
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.379564046859741
+
+-------------In FedALA++ Round number: 134-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0638
+Averaged Test Accurancy: 0.6606
+Averaged Test AUC: 0.7990
+Std Test Accurancy: 0.0387
+Std Test AUC: 0.0093
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.60291290283203
+
+-------------In FedALA++ Round number: 135-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0609
+Averaged Test Accurancy: 0.6611
+Averaged Test AUC: 0.7978
+Std Test Accurancy: 0.0394
+Std Test AUC: 0.0093
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.739478588104248
+
+-------------In FedALA++ Round number: 136-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0569
+Averaged Test Accurancy: 0.6630
+Averaged Test AUC: 0.7998
+Std Test Accurancy: 0.0416
+Std Test AUC: 0.0096
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.5129873752594
+
+-------------In FedALA++ Round number: 137-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0507
+Averaged Test Accurancy: 0.6624
+Averaged Test AUC: 0.8001
+Std Test Accurancy: 0.0441
+Std Test AUC: 0.0099
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.081638813018799
+
+-------------In FedALA++ Round number: 138-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0781
+Averaged Test Accurancy: 0.6558
+Averaged Test AUC: 0.7905
+Std Test Accurancy: 0.0362
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 16.537328481674194
+
+-------------In FedALA++ Round number: 139-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0529
+Averaged Test Accurancy: 0.6608
+Averaged Test AUC: 0.7945
+Std Test Accurancy: 0.0385
+Std Test AUC: 0.0097
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.495261430740356
+
+-------------In FedALA++ Round number: 140-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0717
+Averaged Test Accurancy: 0.6560
+Averaged Test AUC: 0.7898
+Std Test Accurancy: 0.0433
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.526864767074585
+
+-------------In FedALA++ Round number: 141-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0465
+Averaged Test Accurancy: 0.6618
+Averaged Test AUC: 0.7941
+Std Test Accurancy: 0.0406
+Std Test AUC: 0.0099
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.449368476867676
+
+-------------In FedALA++ Round number: 142-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0565
+Averaged Test Accurancy: 0.6564
+Averaged Test AUC: 0.7943
+Std Test Accurancy: 0.0412
+Std Test AUC: 0.0097
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.633314847946167
+
+-------------In FedALA++ Round number: 143-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0638
+Averaged Test Accurancy: 0.6566
+Averaged Test AUC: 0.7938
+Std Test Accurancy: 0.0433
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.741695880889893
+
+-------------In FedALA++ Round number: 144-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0742
+Averaged Test Accurancy: 0.6537
+Averaged Test AUC: 0.7900
+Std Test Accurancy: 0.0361
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.66729974746704
+
+-------------In FedALA++ Round number: 145-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0606
+Averaged Test Accurancy: 0.6568
+Averaged Test AUC: 0.7896
+Std Test Accurancy: 0.0395
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.030015707015991
+
+-------------In FedALA++ Round number: 146-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0411
+Averaged Test Accurancy: 0.6636
+Averaged Test AUC: 0.7989
+Std Test Accurancy: 0.0397
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.762099981307983
+
+-------------In FedALA++ Round number: 147-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0309
+Averaged Test Accurancy: 0.6690
+Averaged Test AUC: 0.8010
+Std Test Accurancy: 0.0401
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.839624166488647
+
+-------------In FedALA++ Round number: 148-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0565
+Averaged Test Accurancy: 0.6588
+Averaged Test AUC: 0.7905
+Std Test Accurancy: 0.0377
+Std Test AUC: 0.0121
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.273181676864624
+
+-------------In FedALA++ Round number: 149-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0616
+Averaged Test Accurancy: 0.6591
+Averaged Test AUC: 0.7937
+Std Test Accurancy: 0.0415
+Std Test AUC: 0.0097
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.087059020996094
+
+-------------In FedALA++ Round number: 150-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0628
+Averaged Test Accurancy: 0.6590
+Averaged Test AUC: 0.7892
+Std Test Accurancy: 0.0352
+Std Test AUC: 0.0101
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.61194086074829
+
+-------------In FedALA++ Round number: 151-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0807
+Averaged Test Accurancy: 0.6552
+Averaged Test AUC: 0.7888
+Std Test Accurancy: 0.0415
+Std Test AUC: 0.0093
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.084685564041138
+
+-------------In FedALA++ Round number: 152-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0780
+Averaged Test Accurancy: 0.6549
+Averaged Test AUC: 0.7881
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0129
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.75442671775818
+
+-------------In FedALA++ Round number: 153-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0393
+Averaged Test Accurancy: 0.6660
+Averaged Test AUC: 0.7988
+Std Test Accurancy: 0.0398
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.92495059967041
+
+-------------In FedALA++ Round number: 154-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0308
+Averaged Test Accurancy: 0.6688
+Averaged Test AUC: 0.8017
+Std Test Accurancy: 0.0425
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.252373218536377
+
+-------------In FedALA++ Round number: 155-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0316
+Averaged Test Accurancy: 0.6682
+Averaged Test AUC: 0.7986
+Std Test Accurancy: 0.0420
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.344624280929565
+
+-------------In FedALA++ Round number: 156-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0239
+Averaged Test Accurancy: 0.6722
+Averaged Test AUC: 0.8019
+Std Test Accurancy: 0.0429
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.271773099899292
+
+-------------In FedALA++ Round number: 157-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0284
+Averaged Test Accurancy: 0.6687
+Averaged Test AUC: 0.7966
+Std Test Accurancy: 0.0444
+Std Test AUC: 0.0097
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.437981367111206
+
+-------------In FedALA++ Round number: 158-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0216
+Averaged Test Accurancy: 0.6722
+Averaged Test AUC: 0.7984
+Std Test Accurancy: 0.0405
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.152363777160645
+
+-------------In FedALA++ Round number: 159-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0188
+Averaged Test Accurancy: 0.6734
+Averaged Test AUC: 0.8001
+Std Test Accurancy: 0.0401
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.421280860900879
+
+-------------In FedALA++ Round number: 160-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0172
+Averaged Test Accurancy: 0.6724
+Averaged Test AUC: 0.8006
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.70079255104065
+
+-------------In FedALA++ Round number: 161-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0256
+Averaged Test Accurancy: 0.6692
+Averaged Test AUC: 0.7951
+Std Test Accurancy: 0.0426
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.43325686454773
+
+-------------In FedALA++ Round number: 162-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0384
+Averaged Test Accurancy: 0.6627
+Averaged Test AUC: 0.7847
+Std Test Accurancy: 0.0365
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.864084482192993
+
+-------------In FedALA++ Round number: 163-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0217
+Averaged Test Accurancy: 0.6699
+Averaged Test AUC: 0.7942
+Std Test Accurancy: 0.0380
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.863045930862427
+
+-------------In FedALA++ Round number: 164-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1484
+Averaged Test Accurancy: 0.6327
+Averaged Test AUC: 0.7888
+Std Test Accurancy: 0.0475
+Std Test AUC: 0.0168
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.729565858840942
+
+-------------In FedALA++ Round number: 165-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0961
+Averaged Test Accurancy: 0.6512
+Averaged Test AUC: 0.7726
+Std Test Accurancy: 0.0356
+Std Test AUC: 0.0101
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.752829790115356
+
+-------------In FedALA++ Round number: 166-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0443
+Averaged Test Accurancy: 0.6657
+Averaged Test AUC: 0.7892
+Std Test Accurancy: 0.0359
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.351288318634033
+
+-------------In FedALA++ Round number: 167-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0251
+Averaged Test Accurancy: 0.6724
+Averaged Test AUC: 0.8016
+Std Test Accurancy: 0.0351
+Std Test AUC: 0.0100
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.429483652114868
+
+-------------In FedALA++ Round number: 168-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0249
+Averaged Test Accurancy: 0.6711
+Averaged Test AUC: 0.8013
+Std Test Accurancy: 0.0374
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 16.970661640167236
+
+-------------In FedALA++ Round number: 169-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0175
+Averaged Test Accurancy: 0.6739
+Averaged Test AUC: 0.8053
+Std Test Accurancy: 0.0381
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.981087684631348
+
+-------------In FedALA++ Round number: 170-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0660
+Averaged Test Accurancy: 0.6564
+Averaged Test AUC: 0.7821
+Std Test Accurancy: 0.0393
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.657076120376587
+
+-------------In FedALA++ Round number: 171-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0527
+Averaged Test Accurancy: 0.6591
+Averaged Test AUC: 0.7844
+Std Test Accurancy: 0.0373
+Std Test AUC: 0.0095
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.571186542510986
+
+-------------In FedALA++ Round number: 172-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0292
+Averaged Test Accurancy: 0.6678
+Averaged Test AUC: 0.7972
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0084
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.965038061141968
+
+-------------In FedALA++ Round number: 173-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0204
+Averaged Test Accurancy: 0.6720
+Averaged Test AUC: 0.7998
+Std Test Accurancy: 0.0410
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.836291790008545
+
+-------------In FedALA++ Round number: 174-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0156
+Averaged Test Accurancy: 0.6742
+Averaged Test AUC: 0.8044
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0102
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.285690546035767
+
+-------------In FedALA++ Round number: 175-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0161
+Averaged Test Accurancy: 0.6743
+Averaged Test AUC: 0.8055
+Std Test Accurancy: 0.0383
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.140023946762085
+
+-------------In FedALA++ Round number: 176-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0686
+Averaged Test Accurancy: 0.6559
+Averaged Test AUC: 0.7962
+Std Test Accurancy: 0.0411
+Std Test AUC: 0.0129
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.867883682250977
+
+-------------In FedALA++ Round number: 177-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0448
+Averaged Test Accurancy: 0.6616
+Averaged Test AUC: 0.7833
+Std Test Accurancy: 0.0380
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.271918535232544
+
+-------------In FedALA++ Round number: 178-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0237
+Averaged Test Accurancy: 0.6686
+Averaged Test AUC: 0.7972
+Std Test Accurancy: 0.0386
+Std Test AUC: 0.0099
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.283863306045532
+
+-------------In FedALA++ Round number: 179-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0208
+Averaged Test Accurancy: 0.6704
+Averaged Test AUC: 0.7989
+Std Test Accurancy: 0.0400
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.894689083099365
+
+-------------In FedALA++ Round number: 180-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0135
+Averaged Test Accurancy: 0.6754
+Averaged Test AUC: 0.8048
+Std Test Accurancy: 0.0409
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.26747989654541
+
+-------------In FedALA++ Round number: 181-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0112
+Averaged Test Accurancy: 0.6766
+Averaged Test AUC: 0.8069
+Std Test Accurancy: 0.0388
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.824630737304688
+
+-------------In FedALA++ Round number: 182-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0099
+Averaged Test Accurancy: 0.6779
+Averaged Test AUC: 0.8077
+Std Test Accurancy: 0.0387
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.734055757522583
+
+-------------In FedALA++ Round number: 183-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0091
+Averaged Test Accurancy: 0.6788
+Averaged Test AUC: 0.8080
+Std Test Accurancy: 0.0397
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.748221158981323
+
+-------------In FedALA++ Round number: 184-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0088
+Averaged Test Accurancy: 0.6789
+Averaged Test AUC: 0.8060
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.670396327972412
+
+-------------In FedALA++ Round number: 185-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0079
+Averaged Test Accurancy: 0.6793
+Averaged Test AUC: 0.8073
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.005566120147705
+
+-------------In FedALA++ Round number: 186-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0441
+Averaged Test Accurancy: 0.6596
+Averaged Test AUC: 0.7889
+Std Test Accurancy: 0.0419
+Std Test AUC: 0.0139
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.760587453842163
+
+-------------In FedALA++ Round number: 187-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0869
+Averaged Test Accurancy: 0.6458
+Averaged Test AUC: 0.7689
+Std Test Accurancy: 0.0469
+Std Test AUC: 0.0094
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.742192029953003
+
+-------------In FedALA++ Round number: 188-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0289
+Averaged Test Accurancy: 0.6658
+Averaged Test AUC: 0.7871
+Std Test Accurancy: 0.0399
+Std Test AUC: 0.0092
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.40308117866516
+
+-------------In FedALA++ Round number: 189-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0153
+Averaged Test Accurancy: 0.6745
+Averaged Test AUC: 0.8008
+Std Test Accurancy: 0.0402
+Std Test AUC: 0.0096
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.153461933135986
+
+-------------In FedALA++ Round number: 190-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0114
+Averaged Test Accurancy: 0.6774
+Averaged Test AUC: 0.8061
+Std Test Accurancy: 0.0408
+Std Test AUC: 0.0099
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.402833461761475
+
+-------------In FedALA++ Round number: 191-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0096
+Averaged Test Accurancy: 0.6781
+Averaged Test AUC: 0.8085
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0101
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.982809066772461
+
+-------------In FedALA++ Round number: 192-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0085
+Averaged Test Accurancy: 0.6794
+Averaged Test AUC: 0.8092
+Std Test Accurancy: 0.0399
+Std Test AUC: 0.0102
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.301427364349365
+
+-------------In FedALA++ Round number: 193-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0077
+Averaged Test Accurancy: 0.6796
+Averaged Test AUC: 0.8096
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.586434364318848
+
+-------------In FedALA++ Round number: 194-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0070
+Averaged Test Accurancy: 0.6804
+Averaged Test AUC: 0.8101
+Std Test Accurancy: 0.0410
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.058709859848022
+
+-------------In FedALA++ Round number: 195-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0066
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8102
+Std Test Accurancy: 0.0415
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.392338991165161
+
+-------------In FedALA++ Round number: 196-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0061
+Averaged Test Accurancy: 0.6812
+Averaged Test AUC: 0.8102
+Std Test Accurancy: 0.0400
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.376230478286743
+
+-------------In FedALA++ Round number: 197-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0058
+Averaged Test Accurancy: 0.6802
+Averaged Test AUC: 0.8104
+Std Test Accurancy: 0.0399
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.583326578140259
+
+-------------In FedALA++ Round number: 198-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0149
+Averaged Test Accurancy: 0.6758
+Averaged Test AUC: 0.7981
+Std Test Accurancy: 0.0392
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.279136419296265
+
+-------------In FedALA++ Round number: 199-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1083
+Averaged Test Accurancy: 0.6369
+Averaged Test AUC: 0.7657
+Std Test Accurancy: 0.0420
+Std Test AUC: 0.0113
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.996165037155151
+
+-------------In FedALA++ Round number: 200-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0358
+Averaged Test Accurancy: 0.6630
+Averaged Test AUC: 0.7827
+Std Test Accurancy: 0.0417
+Std Test AUC: 0.0099
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.07468056678772
+
+-------------In FedALA++ Round number: 201-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0158
+Averaged Test Accurancy: 0.6753
+Averaged Test AUC: 0.7961
+Std Test Accurancy: 0.0425
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.881852388381958
+
+-------------In FedALA++ Round number: 202-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0124
+Averaged Test Accurancy: 0.6776
+Averaged Test AUC: 0.7991
+Std Test Accurancy: 0.0402
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.455366134643555
+
+-------------In FedALA++ Round number: 203-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0151
+Averaged Test Accurancy: 0.6740
+Averaged Test AUC: 0.7943
+Std Test Accurancy: 0.0408
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.637869358062744
+
+-------------In FedALA++ Round number: 204-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0096
+Averaged Test Accurancy: 0.6779
+Averaged Test AUC: 0.8029
+Std Test Accurancy: 0.0413
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.331000328063965
+
+-------------In FedALA++ Round number: 205-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0097
+Averaged Test Accurancy: 0.6764
+Averaged Test AUC: 0.8040
+Std Test Accurancy: 0.0410
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.75120759010315
+
+-------------In FedALA++ Round number: 206-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0073
+Averaged Test Accurancy: 0.6790
+Averaged Test AUC: 0.8068
+Std Test Accurancy: 0.0396
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.563948154449463
+
+-------------In FedALA++ Round number: 207-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0065
+Averaged Test Accurancy: 0.6804
+Averaged Test AUC: 0.8079
+Std Test Accurancy: 0.0397
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.391300201416016
+
+-------------In FedALA++ Round number: 208-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0059
+Averaged Test Accurancy: 0.6813
+Averaged Test AUC: 0.8090
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.625685214996338
+
+-------------In FedALA++ Round number: 209-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0055
+Averaged Test Accurancy: 0.6807
+Averaged Test AUC: 0.8091
+Std Test Accurancy: 0.0407
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.800299406051636
+
+-------------In FedALA++ Round number: 210-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0051
+Averaged Test Accurancy: 0.6812
+Averaged Test AUC: 0.8091
+Std Test Accurancy: 0.0405
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.56591534614563
+
+-------------In FedALA++ Round number: 211-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0049
+Averaged Test Accurancy: 0.6818
+Averaged Test AUC: 0.8094
+Std Test Accurancy: 0.0410
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.322449922561646
+
+-------------In FedALA++ Round number: 212-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0046
+Averaged Test Accurancy: 0.6822
+Averaged Test AUC: 0.8095
+Std Test Accurancy: 0.0401
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.251749515533447
+
+-------------In FedALA++ Round number: 213-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0044
+Averaged Test Accurancy: 0.6812
+Averaged Test AUC: 0.8096
+Std Test Accurancy: 0.0397
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.331602811813354
+
+-------------In FedALA++ Round number: 214-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0043
+Averaged Test Accurancy: 0.6824
+Averaged Test AUC: 0.8096
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.549761056900024
+
+-------------In FedALA++ Round number: 215-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0041
+Averaged Test Accurancy: 0.6828
+Averaged Test AUC: 0.8095
+Std Test Accurancy: 0.0396
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.123070001602173
+
+-------------In FedALA++ Round number: 216-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1658
+Averaged Test Accurancy: 0.6265
+Averaged Test AUC: 0.7768
+Std Test Accurancy: 0.0479
+Std Test AUC: 0.0167
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.547636032104492
+
+-------------In FedALA++ Round number: 217-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1241
+Averaged Test Accurancy: 0.6377
+Averaged Test AUC: 0.7586
+Std Test Accurancy: 0.0360
+Std Test AUC: 0.0127
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.848775386810303
+
+-------------In FedALA++ Round number: 218-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0341
+Averaged Test Accurancy: 0.6669
+Averaged Test AUC: 0.7871
+Std Test Accurancy: 0.0403
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.218730688095093
+
+-------------In FedALA++ Round number: 219-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0176
+Averaged Test Accurancy: 0.6710
+Averaged Test AUC: 0.7980
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.092119216918945
+
+-------------In FedALA++ Round number: 220-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0122
+Averaged Test Accurancy: 0.6752
+Averaged Test AUC: 0.8041
+Std Test Accurancy: 0.0395
+Std Test AUC: 0.0103
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.118743658065796
+
+-------------In FedALA++ Round number: 221-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0092
+Averaged Test Accurancy: 0.6749
+Averaged Test AUC: 0.8077
+Std Test Accurancy: 0.0428
+Std Test AUC: 0.0104
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.640542030334473
+
+-------------In FedALA++ Round number: 222-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0077
+Averaged Test Accurancy: 0.6776
+Averaged Test AUC: 0.8093
+Std Test Accurancy: 0.0424
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.603819847106934
+
+-------------In FedALA++ Round number: 223-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0068
+Averaged Test Accurancy: 0.6784
+Averaged Test AUC: 0.8107
+Std Test Accurancy: 0.0409
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.319671869277954
+
+-------------In FedALA++ Round number: 224-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0061
+Averaged Test Accurancy: 0.6782
+Averaged Test AUC: 0.8112
+Std Test Accurancy: 0.0424
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.016918897628784
+
+-------------In FedALA++ Round number: 225-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0057
+Averaged Test Accurancy: 0.6795
+Averaged Test AUC: 0.8115
+Std Test Accurancy: 0.0424
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.925986766815186
+
+-------------In FedALA++ Round number: 226-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0053
+Averaged Test Accurancy: 0.6792
+Averaged Test AUC: 0.8118
+Std Test Accurancy: 0.0418
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.450056076049805
+
+-------------In FedALA++ Round number: 227-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0049
+Averaged Test Accurancy: 0.6798
+Averaged Test AUC: 0.8122
+Std Test Accurancy: 0.0402
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.797481298446655
+
+-------------In FedALA++ Round number: 228-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0046
+Averaged Test Accurancy: 0.6805
+Averaged Test AUC: 0.8120
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.742675065994263
+
+-------------In FedALA++ Round number: 229-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0044
+Averaged Test Accurancy: 0.6797
+Averaged Test AUC: 0.8119
+Std Test Accurancy: 0.0407
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.51292371749878
+
+-------------In FedALA++ Round number: 230-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0042
+Averaged Test Accurancy: 0.6805
+Averaged Test AUC: 0.8122
+Std Test Accurancy: 0.0408
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.77106523513794
+
+-------------In FedALA++ Round number: 231-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0040
+Averaged Test Accurancy: 0.6801
+Averaged Test AUC: 0.8126
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.307694435119629
+
+-------------In FedALA++ Round number: 232-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0038
+Averaged Test Accurancy: 0.6800
+Averaged Test AUC: 0.8125
+Std Test Accurancy: 0.0411
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.384873628616333
+
+-------------In FedALA++ Round number: 233-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0037
+Averaged Test Accurancy: 0.6819
+Averaged Test AUC: 0.8125
+Std Test Accurancy: 0.0406
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.034260034561157
+
+-------------In FedALA++ Round number: 234-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0386
+Averaged Test Accurancy: 0.6616
+Averaged Test AUC: 0.7903
+Std Test Accurancy: 0.0394
+Std Test AUC: 0.0143
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.736023902893066
+
+-------------In FedALA++ Round number: 235-------------
+
+Evaluate global model
+Averaged Train Loss: 0.1070
+Averaged Test Accurancy: 0.6382
+Averaged Test AUC: 0.7626
+Std Test Accurancy: 0.0482
+Std Test AUC: 0.0142
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.081699132919312
+
+-------------In FedALA++ Round number: 236-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0262
+Averaged Test Accurancy: 0.6652
+Averaged Test AUC: 0.7854
+Std Test Accurancy: 0.0383
+Std Test AUC: 0.0107
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.22369885444641
+
+-------------In FedALA++ Round number: 237-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0197
+Averaged Test Accurancy: 0.6680
+Averaged Test AUC: 0.7882
+Std Test Accurancy: 0.0396
+Std Test AUC: 0.0101
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.79002833366394
+
+-------------In FedALA++ Round number: 238-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0098
+Averaged Test Accurancy: 0.6735
+Averaged Test AUC: 0.8014
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0102
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.84712266921997
+
+-------------In FedALA++ Round number: 239-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0072
+Averaged Test Accurancy: 0.6773
+Averaged Test AUC: 0.8067
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0105
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.474934101104736
+
+-------------In FedALA++ Round number: 240-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0061
+Averaged Test Accurancy: 0.6786
+Averaged Test AUC: 0.8089
+Std Test Accurancy: 0.0408
+Std Test AUC: 0.0106
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.51075839996338
+
+-------------In FedALA++ Round number: 241-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0053
+Averaged Test Accurancy: 0.6792
+Averaged Test AUC: 0.8108
+Std Test Accurancy: 0.0406
+Std Test AUC: 0.0108
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.34371304512024
+
+-------------In FedALA++ Round number: 242-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0049
+Averaged Test Accurancy: 0.6790
+Averaged Test AUC: 0.8116
+Std Test Accurancy: 0.0399
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.846988201141357
+
+-------------In FedALA++ Round number: 243-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0044
+Averaged Test Accurancy: 0.6797
+Averaged Test AUC: 0.8128
+Std Test Accurancy: 0.0405
+Std Test AUC: 0.0109
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.94439959526062
+
+-------------In FedALA++ Round number: 244-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0041
+Averaged Test Accurancy: 0.6800
+Averaged Test AUC: 0.8134
+Std Test Accurancy: 0.0386
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.51073908805847
+
+-------------In FedALA++ Round number: 245-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0038
+Averaged Test Accurancy: 0.6800
+Averaged Test AUC: 0.8136
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0110
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.859437942504883
+
+-------------In FedALA++ Round number: 246-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0036
+Averaged Test Accurancy: 0.6799
+Averaged Test AUC: 0.8141
+Std Test Accurancy: 0.0405
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.436211109161377
+
+-------------In FedALA++ Round number: 247-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0035
+Averaged Test Accurancy: 0.6805
+Averaged Test AUC: 0.8142
+Std Test Accurancy: 0.0398
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.198699951171875
+
+-------------In FedALA++ Round number: 248-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0033
+Averaged Test Accurancy: 0.6798
+Averaged Test AUC: 0.8145
+Std Test Accurancy: 0.0401
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.410308122634888
+
+-------------In FedALA++ Round number: 249-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0032
+Averaged Test Accurancy: 0.6805
+Averaged Test AUC: 0.8146
+Std Test Accurancy: 0.0396
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.819244384765625
+
+-------------In FedALA++ Round number: 250-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0031
+Averaged Test Accurancy: 0.6809
+Averaged Test AUC: 0.8147
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.4893741607666
+
+-------------In FedALA++ Round number: 251-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0029
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8149
+Std Test Accurancy: 0.0399
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.055376768112183
+
+-------------In FedALA++ Round number: 252-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0029
+Averaged Test Accurancy: 0.6813
+Averaged Test AUC: 0.8147
+Std Test Accurancy: 0.0387
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.49437689781189
+
+-------------In FedALA++ Round number: 253-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0028
+Averaged Test Accurancy: 0.6807
+Averaged Test AUC: 0.8148
+Std Test Accurancy: 0.0392
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.805071830749512
+
+-------------In FedALA++ Round number: 254-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0027
+Averaged Test Accurancy: 0.6800
+Averaged Test AUC: 0.8149
+Std Test Accurancy: 0.0387
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.74074411392212
+
+-------------In FedALA++ Round number: 255-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0026
+Averaged Test Accurancy: 0.6805
+Averaged Test AUC: 0.8150
+Std Test Accurancy: 0.0398
+Std Test AUC: 0.0111
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.820807695388794
+
+-------------In FedALA++ Round number: 256-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0025
+Averaged Test Accurancy: 0.6808
+Averaged Test AUC: 0.8147
+Std Test Accurancy: 0.0402
+Std Test AUC: 0.0112
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 16.188742637634277
+
+-------------In FedALA++ Round number: 257-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0025
+Averaged Test Accurancy: 0.6816
+Averaged Test AUC: 0.8148
+Std Test Accurancy: 0.0389
+Std Test AUC: 0.0112
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.10291600227356
+
+-------------In FedALA++ Round number: 258-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0024
+Averaged Test Accurancy: 0.6807
+Averaged Test AUC: 0.8146
+Std Test Accurancy: 0.0388
+Std Test AUC: 0.0113
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.798177003860474
+
+-------------In FedALA++ Round number: 259-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0023
+Averaged Test Accurancy: 0.6814
+Averaged Test AUC: 0.8148
+Std Test Accurancy: 0.0391
+Std Test AUC: 0.0113
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.729903936386108
+
+-------------In FedALA++ Round number: 260-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0023
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8148
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0113
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.461137294769287
+
+-------------In FedALA++ Round number: 261-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0022
+Averaged Test Accurancy: 0.6804
+Averaged Test AUC: 0.8148
+Std Test Accurancy: 0.0396
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.089186668395996
+
+-------------In FedALA++ Round number: 262-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0022
+Averaged Test Accurancy: 0.6805
+Averaged Test AUC: 0.8147
+Std Test Accurancy: 0.0385
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.69662570953369
+
+-------------In FedALA++ Round number: 263-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0021
+Averaged Test Accurancy: 0.6808
+Averaged Test AUC: 0.8146
+Std Test Accurancy: 0.0394
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.77176308631897
+
+-------------In FedALA++ Round number: 264-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0021
+Averaged Test Accurancy: 0.6808
+Averaged Test AUC: 0.8144
+Std Test Accurancy: 0.0404
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.921292304992676
+
+-------------In FedALA++ Round number: 265-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0021
+Averaged Test Accurancy: 0.6815
+Averaged Test AUC: 0.8146
+Std Test Accurancy: 0.0389
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.862701416015625
+
+-------------In FedALA++ Round number: 266-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0020
+Averaged Test Accurancy: 0.6816
+Averaged Test AUC: 0.8147
+Std Test Accurancy: 0.0388
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.510059833526611
+
+-------------In FedALA++ Round number: 267-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0020
+Averaged Test Accurancy: 0.6808
+Averaged Test AUC: 0.8147
+Std Test Accurancy: 0.0392
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.361963510513306
+
+-------------In FedALA++ Round number: 268-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0019
+Averaged Test Accurancy: 0.6812
+Averaged Test AUC: 0.8146
+Std Test Accurancy: 0.0389
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.470682382583618
+
+-------------In FedALA++ Round number: 269-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0019
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8147
+Std Test Accurancy: 0.0383
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.905113697052002
+
+-------------In FedALA++ Round number: 270-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0019
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8145
+Std Test Accurancy: 0.0397
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.467779397964478
+
+-------------In FedALA++ Round number: 271-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0018
+Averaged Test Accurancy: 0.6814
+Averaged Test AUC: 0.8143
+Std Test Accurancy: 0.0393
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.893828868865967
+
+-------------In FedALA++ Round number: 272-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0018
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8143
+Std Test Accurancy: 0.0391
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.64441967010498
+
+-------------In FedALA++ Round number: 273-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0018
+Averaged Test Accurancy: 0.6814
+Averaged Test AUC: 0.8145
+Std Test Accurancy: 0.0394
+Std Test AUC: 0.0114
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.073270320892334
+
+-------------In FedALA++ Round number: 274-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0017
+Averaged Test Accurancy: 0.6809
+Averaged Test AUC: 0.8143
+Std Test Accurancy: 0.0385
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.64122462272644
+
+-------------In FedALA++ Round number: 275-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0017
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8143
+Std Test Accurancy: 0.0395
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.52271819114685
+
+-------------In FedALA++ Round number: 276-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0017
+Averaged Test Accurancy: 0.6815
+Averaged Test AUC: 0.8142
+Std Test Accurancy: 0.0378
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.617841720581055
+
+-------------In FedALA++ Round number: 277-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0017
+Averaged Test Accurancy: 0.6803
+Averaged Test AUC: 0.8140
+Std Test Accurancy: 0.0395
+Std Test AUC: 0.0115
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.707635164260864
+
+-------------In FedALA++ Round number: 278-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0016
+Averaged Test Accurancy: 0.6813
+Averaged Test AUC: 0.8138
+Std Test Accurancy: 0.0386
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.635637044906616
+
+-------------In FedALA++ Round number: 279-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0016
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8138
+Std Test Accurancy: 0.0393
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.738617420196533
+
+-------------In FedALA++ Round number: 280-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0016
+Averaged Test Accurancy: 0.6808
+Averaged Test AUC: 0.8139
+Std Test Accurancy: 0.0395
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.956382751464844
+
+-------------In FedALA++ Round number: 281-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0016
+Averaged Test Accurancy: 0.6811
+Averaged Test AUC: 0.8139
+Std Test Accurancy: 0.0386
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.244778871536255
+
+-------------In FedALA++ Round number: 282-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0015
+Averaged Test Accurancy: 0.6805
+Averaged Test AUC: 0.8137
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.598655223846436
+
+-------------In FedALA++ Round number: 283-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0015
+Averaged Test Accurancy: 0.6806
+Averaged Test AUC: 0.8137
+Std Test Accurancy: 0.0383
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.73282265663147
+
+-------------In FedALA++ Round number: 284-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0015
+Averaged Test Accurancy: 0.6806
+Averaged Test AUC: 0.8137
+Std Test Accurancy: 0.0396
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.106992721557617
+
+-------------In FedALA++ Round number: 285-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0015
+Averaged Test Accurancy: 0.6807
+Averaged Test AUC: 0.8136
+Std Test Accurancy: 0.0395
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.426352739334106
+
+-------------In FedALA++ Round number: 286-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0015
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8136
+Std Test Accurancy: 0.0391
+Std Test AUC: 0.0116
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.594382524490356
+
+-------------In FedALA++ Round number: 287-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0014
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8136
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.702442646026611
+
+-------------In FedALA++ Round number: 288-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0014
+Averaged Test Accurancy: 0.6803
+Averaged Test AUC: 0.8135
+Std Test Accurancy: 0.0387
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.370871543884277
+
+-------------In FedALA++ Round number: 289-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0014
+Averaged Test Accurancy: 0.6802
+Averaged Test AUC: 0.8136
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.912829160690308
+
+-------------In FedALA++ Round number: 290-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0014
+Averaged Test Accurancy: 0.6802
+Averaged Test AUC: 0.8135
+Std Test Accurancy: 0.0390
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.225303411483765
+
+-------------In FedALA++ Round number: 291-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0014
+Averaged Test Accurancy: 0.6801
+Averaged Test AUC: 0.8134
+Std Test Accurancy: 0.0401
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.520859003067017
+
+-------------In FedALA++ Round number: 292-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0014
+Averaged Test Accurancy: 0.6801
+Averaged Test AUC: 0.8133
+Std Test Accurancy: 0.0402
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.627501726150513
+
+-------------In FedALA++ Round number: 293-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0013
+Averaged Test Accurancy: 0.6808
+Averaged Test AUC: 0.8132
+Std Test Accurancy: 0.0388
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.413397312164307
+
+-------------In FedALA++ Round number: 294-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0013
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8131
+Std Test Accurancy: 0.0395
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.12206220626831
+
+-------------In FedALA++ Round number: 295-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0013
+Averaged Test Accurancy: 0.6801
+Averaged Test AUC: 0.8132
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.85073471069336
+
+-------------In FedALA++ Round number: 296-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0013
+Averaged Test Accurancy: 0.6806
+Averaged Test AUC: 0.8131
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.25594997406006
+
+-------------In FedALA++ Round number: 297-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0013
+Averaged Test Accurancy: 0.6804
+Averaged Test AUC: 0.8129
+Std Test Accurancy: 0.0386
+Std Test AUC: 0.0117
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.077597618103027
+
+-------------In FedALA++ Round number: 298-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0013
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8128
+Std Test Accurancy: 0.0393
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.60087823867798
+
+-------------In FedALA++ Round number: 299-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0012
+Averaged Test Accurancy: 0.6806
+Averaged Test AUC: 0.8128
+Std Test Accurancy: 0.0393
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.605348348617554
+
+-------------In FedALA++ Round number: 300-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0012
+Averaged Test Accurancy: 0.6805
+Averaged Test AUC: 0.8128
+Std Test Accurancy: 0.0391
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.79115605354309
+
+-------------In FedALA++ Round number: 301-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0012
+Averaged Test Accurancy: 0.6800
+Averaged Test AUC: 0.8128
+Std Test Accurancy: 0.0396
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.23401403427124
+
+-------------In FedALA++ Round number: 302-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0012
+Averaged Test Accurancy: 0.6802
+Averaged Test AUC: 0.8128
+Std Test Accurancy: 0.0384
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.421311855316162
+
+-------------In FedALA++ Round number: 303-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0012
+Averaged Test Accurancy: 0.6807
+Averaged Test AUC: 0.8128
+Std Test Accurancy: 0.0383
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 11.405767440795898
+
+-------------In FedALA++ Round number: 304-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0012
+Averaged Test Accurancy: 0.6808
+Averaged Test AUC: 0.8126
+Std Test Accurancy: 0.0383
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.498528718948364
+
+-------------In FedALA++ Round number: 305-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0012
+Averaged Test Accurancy: 0.6814
+Averaged Test AUC: 0.8127
+Std Test Accurancy: 0.0383
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.850109338760376
+
+-------------In FedALA++ Round number: 306-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0011
+Averaged Test Accurancy: 0.6808
+Averaged Test AUC: 0.8126
+Std Test Accurancy: 0.0379
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.039926052093506
+
+-------------In FedALA++ Round number: 307-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0011
+Averaged Test Accurancy: 0.6813
+Averaged Test AUC: 0.8125
+Std Test Accurancy: 0.0387
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.71039342880249
+
+-------------In FedALA++ Round number: 308-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0011
+Averaged Test Accurancy: 0.6805
+Averaged Test AUC: 0.8124
+Std Test Accurancy: 0.0385
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 18.538068771362305
+
+-------------In FedALA++ Round number: 309-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0011
+Averaged Test Accurancy: 0.6808
+Averaged Test AUC: 0.8124
+Std Test Accurancy: 0.0381
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.555429697036743
+
+-------------In FedALA++ Round number: 310-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0011
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8124
+Std Test Accurancy: 0.0389
+Std Test AUC: 0.0118
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.149988412857056
+
+-------------In FedALA++ Round number: 311-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0011
+Averaged Test Accurancy: 0.6804
+Averaged Test AUC: 0.8123
+Std Test Accurancy: 0.0381
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 12.99498701095581
+
+-------------In FedALA++ Round number: 312-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0011
+Averaged Test Accurancy: 0.6807
+Averaged Test AUC: 0.8123
+Std Test Accurancy: 0.0388
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 13.412537097930908
+
+-------------In FedALA++ Round number: 313-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0011
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8123
+Std Test Accurancy: 0.0373
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 14.43105435371399
+
+-------------In FedALA++ Round number: 314-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0011
+Averaged Test Accurancy: 0.6796
+Averaged Test AUC: 0.8122
+Std Test Accurancy: 0.0389
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 17.59597635269165
+
+-------------In FedALA++ Round number: 315-------------
+
+Evaluate global model
+Averaged Train Loss: 0.0010
+Averaged Test Accurancy: 0.6810
+Averaged Test AUC: 0.8123
+Std Test Accurancy: 0.0387
+Std Test AUC: 0.0119
+Global model updated with aggregated parameters
+------------------------- time cost ------------------------- 15.032209157943726
+
+Best accuracy.
+0.6827724091969344
+
+Average time cost per round.
+15.787734285233514
+File path: ../results/Cifar100_pat_FedALA++_test_0.h5
+
+Average time cost: 4995.35s.
+Length:  316
+std for best accurancy: 0.0
+mean for best accurancy: 0.6827724091969344
+All done!
+
+Storage on cpu
+-------------------------------------------------------------------------------
+Total Tensors: 282685270 	Used Memory: 539.84M
+-------------------------------------------------------------------------------
+
+Storage on cuda:0
+-------------------------------------------------------------------------------
+Total Tensors: 58357896 	Used Memory: 152.11M
+The allocated memory on cuda:0: 168.98M
+Memory differs due to the matrix alignment or invisible gradient buffer tensors
+-------------------------------------------------------------------------------
