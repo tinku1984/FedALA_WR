@@ -37,6 +37,7 @@ class FedALA(Server):
 
 
     def train(self):
+        
         for i in range(self.global_rounds+1):
             s_t = time.time()
             self.selected_clients = self.select_clients()
@@ -82,6 +83,7 @@ class FedALA(Server):
             print(f"\n-------------Fine tuning round-------------")
             print("\nEvaluate new clients")
             self.evaluate()
+        return max(self.rs_test_acc)
 
 
     def send_models(self):
@@ -89,3 +91,4 @@ class FedALA(Server):
 
         for client in self.clients:
             client.local_initialization(self.global_model)
+    

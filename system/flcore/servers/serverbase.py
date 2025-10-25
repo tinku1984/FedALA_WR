@@ -17,6 +17,7 @@
 
 import torch
 import os
+import yaml
 import numpy as np
 import h5py
 import copy
@@ -24,6 +25,7 @@ import time
 import random
 from utils.data_utils import read_client_data
 from utils.dlg import DLG
+
 
 
 class Server(object):
@@ -78,6 +80,27 @@ class Server(object):
         self.new_clients = []
         self.eval_new_clients = False
         self.fine_tuning_epoch_new = args.fine_tuning_epoch_new
+                
+        self.buffer_size = args.buffer_size
+        self.ewc_lambda = args.ewc_lambda
+        self.global_rounds = args.global_rounds
+        
+        # Path to commons.yaml
+        yaml_path = os.path.join(os.path.dirname(__file__), 'commons.yaml')
+
+        # Load the YAML file
+        with open(yaml_path, 'r') as file:
+            self.commons_config = yaml.safe_load(file)
+        
+        self.parameter_tuning = self.commons_config.get('parameter_tuning',False)
+        self.algo_executing = self.commons_config.get('algo_executing')
+
+
+        # Example: Access specific configurations from commons.yaml
+        print("Commons Config:", self.commons_config)
+
+        # Use configuration values from commons.yaml
+        # self.some_setting = self.commons_config.get('some_setting', 'default_value')
 
     def set_clients(self, clientObj):
         for i, train_slow, send_slow in zip(range(self.num_clients), self.train_slow_clients, self.send_slow_clients):
@@ -185,19 +208,36 @@ class Server(object):
         
     def save_results(self):
         algo = self.dataset + "_" + self.algorithm
-        result_path = "../results/"
+        
+        if (self.parameter_tuning == True):
+            result_path = "../results/grid_search/"
+        else:
+            result_path = "../results/"
+        
         if not os.path.exists(result_path):
             os.makedirs(result_path)
 
-        if (len(self.rs_test_acc)):
-            algo = algo + "_" + self.goal + "_" + str(self.times)
-            file_path = result_path + "{}.h5".format(algo)
-            print("File path: " + file_path)
+        if (self.algo_executing == 'FedALA++'):
+            if (len(self.rs_test_acc)):
+                
+                algo = algo + "_buffer" + str(self.buffer_size) + "_lambda" + str(self.ewc_lambda)
+                file_path = result_path + "{}.h5".format(algo)
+                print("File path: " + file_path)
 
-            with h5py.File(file_path, 'w') as hf:
-                hf.create_dataset('rs_test_acc', data=self.rs_test_acc)
-                hf.create_dataset('rs_test_auc', data=self.rs_test_auc)
-                hf.create_dataset('rs_train_loss', data=self.rs_train_loss)
+                with h5py.File(file_path, 'w') as hf:
+                    hf.create_dataset('rs_test_acc', data=self.rs_test_acc)
+                    hf.create_dataset('rs_test_auc', data=self.rs_test_auc)
+                    hf.create_dataset('rs_train_loss', data=self.rs_train_loss)
+        else:
+            if (len(self.rs_test_acc)):
+                algo = algo + "_" + self.goal + "_" + str(self.times)
+                file_path = result_path + "{}.h5".format(algo)
+                print("File path: " + file_path)
+
+                with h5py.File(file_path, 'w') as hf:
+                    hf.create_dataset('rs_test_acc', data=self.rs_test_acc)
+                    hf.create_dataset('rs_test_auc', data=self.rs_test_auc)
+                    hf.create_dataset('rs_train_loss', data=self.rs_train_loss)
 
     def save_item(self, item, item_name):
         if not os.path.exists(self.save_folder_name):

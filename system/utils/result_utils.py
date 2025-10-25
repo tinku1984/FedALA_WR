@@ -29,7 +29,7 @@ def average_data(algorithm="", dataset="", goal="", times=10):
 
     print("std for best accurancy:", np.std(max_accurancy))
     print("mean for best accurancy:", np.mean(max_accurancy))
-
+    return np.mean(max_accurancy)
 
 def get_all_results_for_one_algo(algorithm="", dataset="", goal="", times=10):
     test_acc = []
@@ -46,7 +46,7 @@ def read_data_then_delete(file_name, delete=False):
 
     with h5py.File(file_path, 'r') as hf:
         rs_test_acc = np.array(hf.get('rs_test_acc'))
-
+        
     if delete:
         os.remove(file_path)
     print("Length: ", len(rs_test_acc))

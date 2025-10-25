@@ -20,11 +20,13 @@ import copy
 import torch
 import argparse
 import os
+import sys
 import time
 import warnings
 import numpy as np
 import torchvision
 import logging
+import itertools
 
 from flcore.servers.serveravg import FedAvg
 from flcore.servers.serverpFedMe import pFedMe
@@ -64,6 +66,16 @@ from flcore.servers.serverdbe import FedDBE
 from flcore.servers.servercac import FedCAC
 from flcore.servers.serverda import PFL_DA
 from flcore.servers.serverlc import FedLC
+from flcore.servers.serverah import FedAH
+from flcore.servers.serverah_pp import FedAH_PP
+
+# Import FedALA++ server
+from flcore.servers.serverala_pp import FedALA_PP
+from flcore.servers.serverala_pp import FedALA_PP
+from utils.tuning import run_grid_search
+
+# Import server classes for algorithms
+from flcore.servers.serverewc import FedEWC
 
 from flcore.trainmodel.models import *
 
@@ -296,6 +308,22 @@ def run(args):
 
         elif args.algorithm == "FedALA":
             server = FedALA(args, i)
+        
+        # Recognize the new algorithm
+        elif args.algorithm == 'FedALA++':
+            server = FedALA_PP(args, i)
+        
+        elif args.algorithm == "FedAH":
+            args.head = copy.deepcopy(args.model.fc)
+            args.model.fc = nn.Identity()
+            args.model = BaseHeadSplit(args.model, args.head)
+            server = FedAH(args, i)
+        
+        elif args.algorithm == "FedAH++":
+            args.head = copy.deepcopy(args.model.fc)
+            args.model.fc = nn.Identity()
+            args.model = BaseHeadSplit(args.model, args.head)
+            server = FedAH_PP(args, i)
 
         elif args.algorithm == "FedPAC":
             args.head = copy.deepcopy(args.model.fc)
@@ -369,6 +397,8 @@ def run(args):
             args.model.fc = nn.Identity()
             args.model = BaseHeadSplit(args.model, args.head)
             server = FedLC(args, i)
+        elif args.algorithm == "FedEWC":
+            server = FedEWC(args, i)
             
         else:
             raise NotImplementedError
@@ -418,7 +448,7 @@ if __name__ == "__main__":
                         help="Total number of clients")
     parser.add_argument('-pv', "--prev", type=int, default=0,
                         help="Previous Running times")
-    parser.add_argument('-t', "--times", type=int, default=1,
+    parser.add_argument('-t', "--times", type=int, default=2,
                         help="Running times")
     parser.add_argument('-eg', "--eval_gap", type=int, default=1,
                         help="Rounds gap for evaluation")
@@ -494,6 +524,15 @@ if __name__ == "__main__":
     # FedDBE
     parser.add_argument('-mo', "--momentum", type=float, default=0.1)
     parser.add_argument('-klw', "--kl_weight", type=float, default=0.0)
+    parser.add_argument('-ewc_lambda', "--ewc_lambda", type=float, default=1.0,
+                        help="ewc_lambda")
+    # Add buffer size argument
+    parser.add_argument('-buffer_size', "--buffer_size", type=int, default=200,
+                    help="Memory buffer size for replay in FedALA++")
+    
+    # Add grid search flag
+    parser.add_argument('-grid_search', action='store_true', help="Flag to run hyperparameter grid search")
+
 
 
     args = parser.parse_args()
@@ -517,8 +556,29 @@ if __name__ == "__main__":
     #     on_trace_ready=torch.profiler.tensorboard_trace_handler('./log')
     #     ) as prof:
     # with torch.autograd.profiler.profile(profile_memory=True) as prof:
-    run(args)
+    # If grid search flag is set, trigger grid search
+    # if args.grid_search:
+    #     # Perform grid search
+    #     run_grid_search(args)
+    # else:
+    #     # Run your normal experiment
+    #     print(f"Running with ewc_lambda={args.ewc_lambda}, buffer_size={args.buffer_size}")
+        
+    #     # Initialize and start federated learning
+    #     server = FedALA_PP(args, times=0)
+    #     server.train()
 
+    # Below one is the tested code....
+    if args.grid_search:
+        # from utils.tuning import run_grid_search  # Import grid search logic
+        run_grid_search(args)  # Run the grid search function with the parsed arguments
+        
+    else:
+        # Run your normal experiment (e.g., FedALA++, FedAvg, etc.)
+        print(f"Running with ewc_lambda={args.ewc_lambda}, buffer_size={args.buffer_size}")
+        # Initialize and start federated learning here
+        run(args)
+    # Tested ends here..................
     
     # print(prof.key_averages().table(sort_by="cpu_time_total", row_limit=20))
     # print(f"\nTotal time cost: {round(time.time()-total_start, 2)}s.")

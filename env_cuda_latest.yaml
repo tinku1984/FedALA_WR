@@ -1,4 +1,4 @@
-name: pfllib
+name: in-fl
 channels:
   - pytorch
   - nvidia

@@ -33,7 +33,7 @@ class ALA:
                 layer_idx: int = 0,
                 eta: float = 1.0,
                 device: str = 'cpu', 
-                threshold: float = 0.1,
+                threshold: float = 0.10,
                 num_pre_loss: int = 10) -> None:
         """
         Initialize ALA module

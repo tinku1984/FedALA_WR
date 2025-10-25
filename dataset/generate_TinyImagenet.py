@@ -28,7 +28,7 @@ from torchvision.datasets import ImageFolder, DatasetFolder
 random.seed(1)
 np.random.seed(1)
 num_clients = 20
-dir_path = "TinyImagenet/"
+dir_path = "TinyImagenet_0_5/"
 
 # https://github.com/QinbinLi/MOON/blob/6c7a4ed1b1a8c0724fa2976292a667a828e3ff5d/datasets.py#L148
 class ImageFolder_custom(DatasetFolder):
